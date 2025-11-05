@@ -1,0 +1,17 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/upload");
+  }, [router]);
+
+  return (
+    <div className="text-center text-gray-600 mt-10">
+      Redirecting to upload page...
+    </div>
+  );
+}
