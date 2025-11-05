@@ -1,0 +1,25 @@
+echo "
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# Environment files
+.env
+backend/.env
+
+# Build outputs
+*.sqlite
+*.db
+*.log
+app/data/uploads/
+app/data/chainlog.jsonl
+
+# macOS junk
+.DS_Store
+" > .gitignore
