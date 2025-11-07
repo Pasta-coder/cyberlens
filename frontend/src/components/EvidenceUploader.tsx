@@ -47,7 +47,7 @@ export default function EvidenceUploader({
         form.append("file", file);
 
         const resp = await axios.post<UploadResult>(
-          "http://localhost:8000/api/upload-evidence",
+          `${process.env.NEXT_PUBLIC_API_BASE}/upload-evidence`,
           form,
           {
             headers: { "Content-Type": "multipart/form-data" },

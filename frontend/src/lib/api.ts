@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+// Your backend base URL
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
 
 export async function uploadEvidence(file: File, onProgress?: (p: number) => void) {
   const form = new FormData();
@@ -17,6 +18,12 @@ export async function uploadEvidence(file: File, onProgress?: (p: number) => voi
 }
 
 export async function analyzeEvidence(file_id: string) {
-  const resp = await axios.get(`${BASE_URL}/analyze?file_id=${file_id}`);
+  const form = new FormData();
+  form.append("file_id", file_id);
+
+  const resp = await axios.post(`${BASE_URL}/analyze`, form, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
   return resp.data;
 }
