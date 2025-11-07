@@ -2,3 +2,7 @@
 {"timestamp": "2025-11-05T21:48:17.833804", "action": "UPLOAD_EVIDENCE", "actor": "system", "target": "ebc71a2c-1f41-435b-ad19-828fc040d065.png", "sha256": "9aff0953f4721bc0c1d00b9c67bc0b72e48fc3ec5a9d637d897be92dc479d58c", "meta": {"original_name": "sample_scam.png"}}
 {"timestamp": "2025-11-05T21:54:11.460481", "action": "UPLOAD_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": "9aff0953f4721bc0c1d00b9c67bc0b72e48fc3ec5a9d637d897be92dc479d58c", "meta": {"original_name": "sample_scam.png"}}
 {"timestamp": "2025-11-05T22:06:08.404497", "action": "ANALYZE_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": null, "meta": {"entities_found": 13}}
+{"timestamp": "2025-11-06T09:02:13.445389", "action": "ANALYZE_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": null, "meta": {"entities_found": 13}}
+{"timestamp": "2025-11-06T09:03:01.928029", "action": "ANALYZE_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": null, "meta": {"entities_found": 13}}
+{"timestamp": "2025-11-06T09:27:36.032519", "action": "ANALYZE_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": null, "meta": {"entities_found": 13}}
+{"timestamp": "2025-11-06T11:51:05.010632", "action": "ANALYZE_EVIDENCE", "actor": "system", "target": "c8f508d8-26c2-4028-bebf-60d4e7d13730.png", "sha256": null, "meta": {"entities_found": 13}}

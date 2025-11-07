@@ -1,0 +1,12 @@
+{
+    "fraud@upi.xyz": {
+        "risk": "high",
+        "tags": [
+            "breached",
+            "phishing_sender"
+        ],
+        "sources": [
+            "local-blocklist"
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "pentagon-seguridad.cl": {
+        "risk": "high",
+        "tags": [
+            "phishing",
+            "foreign_domain",
+            "reported_campaigns"
+        ],
+        "sources": [
+            "local-blocklist"
+        ]
+    },
+    "example.com": {
+        "risk": "low",
+        "tags": [
+            "benign"
+        ],
+        "sources": [
+            "local-defaults"
+        ]
+    }
+}
