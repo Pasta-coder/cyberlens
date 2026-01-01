@@ -8,6 +8,7 @@ from app.api.report import router as report_router                   # Step 2: S
 from app.api.threat_hub import router as intel_router              # Step 3: Real-time Threat Intelligence Hub
 from app.api.batch_analyze import router as batch_router             # Step 5: Multi-File Batch Analyzer
 from app.api.unified_report import router as unified_router          # Step 5: Unified Intelligence PDF Report
+from app.api.fraud_predict import router as fraud_predict_router     # Step 6: Fraud Detection & Prediction
 
 # --- App Config ---
 app = FastAPI(
@@ -42,6 +43,7 @@ app.include_router(report_router, prefix="/api")       # 🧾 /api/report
 app.include_router(intel_router, prefix="/api")        # 🕵️ /api/intel
 app.include_router(batch_router, prefix="/api")        # 🧮 /api/batch-analyze
 app.include_router(unified_router, prefix="/api")      # 📊 /api/unified-report
+app.include_router(fraud_predict_router, prefix="/api")  # 🚨 /api/fraud-predict
 
 
 # --- Health Endpoint ---
@@ -56,7 +58,8 @@ def root():
             "report",
             "threat_intel",
             "batch_analyze",
-            "unified_report"
+            "unified_report",
+            "fraud_predict"
         ],
-        "next_step": "Step 6 — Fraud Network Graph & Scam Cluster Detection"
+        "next_step": "Step 7 — Fraud Network Graph & Scam Cluster Detection"
     }
