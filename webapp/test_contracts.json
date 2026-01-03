@@ -1,0 +1,49 @@
+{
+  "contracts": [
+    {
+      "contract_type": "service_agreement",
+      "amount": 50000,
+      "duration_days": 365,
+      "counterparty_name": "Acme Corporation",
+      "counterparty_country": "USA",
+      "payment_method": "wire_transfer",
+      "industry": "technology"
+    },
+    {
+      "contract_type": "loan_agreement",
+      "amount": 100000,
+      "duration_days": 730,
+      "counterparty_name": "Quick Cash Ltd",
+      "counterparty_country": "Nigeria",
+      "payment_method": "cryptocurrency",
+      "industry": "finance"
+    },
+    {
+      "contract_type": "purchase_order",
+      "amount": 25000,
+      "duration_days": 90,
+      "counterparty_name": "TechSupply Inc",
+      "counterparty_country": "Canada",
+      "payment_method": "credit_card",
+      "industry": "retail"
+    },
+    {
+      "contract_type": "partnership_agreement",
+      "amount": 500000,
+      "duration_days": 1825,
+      "counterparty_name": "Global Ventures",
+      "counterparty_country": "UK",
+      "payment_method": "bank_transfer",
+      "industry": "consulting"
+    },
+    {
+      "contract_type": "investment_agreement",
+      "amount": 1000000,
+      "duration_days": 3650,
+      "counterparty_name": "Crypto Investments LLC",
+      "counterparty_country": "Cayman Islands",
+      "payment_method": "cryptocurrency",
+      "industry": "cryptocurrency"
+    }
+  ]
+}

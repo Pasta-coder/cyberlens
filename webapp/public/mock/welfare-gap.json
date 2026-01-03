@@ -1,0 +1,233 @@
+{
+  "summary": {
+    "expected_beneficiaries": 820000,
+    "actual_beneficiaries": 965000,
+    "gap": 145000,
+    "gap_percentage": 17.7,
+    "risk_level": "high",
+    "last_updated": "2026-01-02"
+  },
+  "timeline": [
+    {
+      "year": 2018,
+      "growth_index": 100,
+      "expected": 1000000,
+      "actual": 1000000,
+      "note": "Baseline year"
+    },
+    {
+      "year": 2019,
+      "growth_index": 103,
+      "expected": 975000,
+      "actual": 990000,
+      "note": "Economic growth begins"
+    },
+    {
+      "year": 2020,
+      "growth_index": 105,
+      "expected": 950000,
+      "actual": 980000,
+      "note": "COVID-19 impact begins"
+    },
+    {
+      "year": 2021,
+      "growth_index": 102,
+      "expected": 930000,
+      "actual": 1020000,
+      "note": "Pandemic welfare expansion"
+    },
+    {
+      "year": 2022,
+      "growth_index": 115,
+      "expected": 880000,
+      "actual": 960000,
+      "note": "Economic recovery starts"
+    },
+    {
+      "year": 2023,
+      "growth_index": 120,
+      "expected": 860000,
+      "actual": 955000,
+      "note": "Growth continues"
+    },
+    {
+      "year": 2024,
+      "growth_index": 125,
+      "expected": 840000,
+      "actual": 950000,
+      "note": "Strong growth phase"
+    },
+    {
+      "year": 2025,
+      "growth_index": 130,
+      "expected": 830000,
+      "actual": 958000,
+      "note": "Welfare exits stagnate"
+    },
+    {
+      "year": 2026,
+      "growth_index": 135,
+      "expected": 820000,
+      "actual": 965000,
+      "note": "Gap widens further"
+    }
+  ],
+  "schemes": [
+    {
+      "name": "Old Age Pension",
+      "expected": 210000,
+      "actual": 260000,
+      "gap": 50000,
+      "gap_percentage": 23.8,
+      "risk": "high"
+    },
+    {
+      "name": "Widow Pension",
+      "expected": 180000,
+      "actual": 215000,
+      "gap": 35000,
+      "gap_percentage": 19.4,
+      "risk": "high"
+    },
+    {
+      "name": "Disability Pension",
+      "expected": 90000,
+      "actual": 120000,
+      "gap": 30000,
+      "gap_percentage": 33.3,
+      "risk": "critical"
+    },
+    {
+      "name": "PDS (Food Security)",
+      "expected": 340000,
+      "actual": 370000,
+      "gap": 30000,
+      "gap_percentage": 8.8,
+      "risk": "moderate"
+    }
+  ],
+  "districts": [
+    {
+      "name": "Central Delhi",
+      "expected": 45000,
+      "actual": 62000,
+      "gap": 17000,
+      "gap_percentage": 37.8,
+      "risk": "critical"
+    },
+    {
+      "name": "South Delhi",
+      "expected": 38000,
+      "actual": 41000,
+      "gap": 3000,
+      "gap_percentage": 7.9,
+      "risk": "low"
+    },
+    {
+      "name": "North Delhi",
+      "expected": 120000,
+      "actual": 145000,
+      "gap": 25000,
+      "gap_percentage": 20.8,
+      "risk": "high"
+    },
+    {
+      "name": "East Delhi",
+      "expected": 95000,
+      "actual": 118000,
+      "gap": 23000,
+      "gap_percentage": 24.2,
+      "risk": "high"
+    },
+    {
+      "name": "West Delhi",
+      "expected": 88000,
+      "actual": 102000,
+      "gap": 14000,
+      "gap_percentage": 15.9,
+      "risk": "moderate"
+    },
+    {
+      "name": "North East Delhi",
+      "expected": 78000,
+      "actual": 96000,
+      "gap": 18000,
+      "gap_percentage": 23.1,
+      "risk": "high"
+    },
+    {
+      "name": "North West Delhi",
+      "expected": 102000,
+      "actual": 125000,
+      "gap": 23000,
+      "gap_percentage": 22.5,
+      "risk": "high"
+    },
+    {
+      "name": "South East Delhi",
+      "expected": 65000,
+      "actual": 72000,
+      "gap": 7000,
+      "gap_percentage": 10.8,
+      "risk": "moderate"
+    },
+    {
+      "name": "South West Delhi",
+      "expected": 82000,
+      "actual": 94000,
+      "gap": 12000,
+      "gap_percentage": 14.6,
+      "risk": "moderate"
+    },
+    {
+      "name": "Shahdara",
+      "expected": 110000,
+      "actual": 135000,
+      "gap": 25000,
+      "gap_percentage": 22.7,
+      "risk": "high"
+    },
+    {
+      "name": "New Delhi",
+      "expected": 15000,
+      "actual": 16000,
+      "gap": 1000,
+      "gap_percentage": 6.7,
+      "risk": "low"
+    }
+  ],
+  "narrative": {
+    "key_findings": [
+      "Delhi's per capita income grew 35% from 2018-2026, suggesting improved living standards",
+      "Despite economic growth, welfare beneficiaries increased by 18% instead of declining",
+      "Gap of 1.45 lakh beneficiaries between expected and actual enrollment",
+      "Disability Pension shows highest anomaly (33% excess)",
+      "Central Delhi shows critical mismatch (38% excess)"
+    ],
+    "possible_reasons": [
+      "Delayed exit mechanisms from welfare programs",
+      "Income growth concentrated in upper economic strata",
+      "Administrative inefficiencies in beneficiary verification",
+      "Legitimate increase in vulnerable populations",
+      "Potential duplicate or ghost beneficiaries"
+    ],
+    "recommendations": [
+      "Conduct district-level beneficiary verification drives",
+      "Implement income-linked auto-exit criteria",
+      "Cross-verify with Aadhaar and income tax databases",
+      "Review Disability Pension certification process",
+      "Strengthen periodic re-eligibility assessments"
+    ]
+  },
+  "methodology": {
+    "title": "How are 'Expected' numbers estimated?",
+    "explanation": "Expected beneficiary counts are derived from established economic research linking income growth to poverty reduction (World Bank methodology, Economic Survey of Delhi). When per capita income rises, fewer people typically need welfare support. This dashboard highlights system-level mismatches for policy review — it does not accuse individuals of fraud.",
+    "data_sources": [
+      "Delhi Economic Survey (2018-2026)",
+      "World Bank poverty elasticity research",
+      "Government of India welfare enrollment data",
+      "Delhi Statistical Handbook"
+    ],
+    "disclaimer": "This analysis is for policy review purposes only. Gaps may have legitimate explanations including demographic changes, improved scheme awareness, or genuine need increase. Field verification is recommended before action."
+  }
+}
