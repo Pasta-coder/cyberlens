@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: "Fraud Predict", href: "/fraud-predict" },
     { name: "Procurement", href: "/procurement" },
     { name: "Welfare Forensics", href: "/welfare" },
+    { name: "Fiscal Leakage", href: "/fiscal" },
     { name: "Reports", href: "/report/unified" },
   ];
 
