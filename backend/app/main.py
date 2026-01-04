@@ -28,9 +28,14 @@ app = FastAPI(
 )
 
 # --- CORS for Frontend Integration ---
+origins = [
+    "http://localhost:3000",
+    "https://cyberlens-frontend.onrender.com", # REPLACE with your actual Frontend URL
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],           # Allow all origins for demo; tighten for production
+    allow_origins=origins,  # 👈 Explicit origins instead of ["*"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
