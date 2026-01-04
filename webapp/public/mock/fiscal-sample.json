@@ -1,100 +1,4410 @@
-{  "summary": {    "total_transactions": 45231,    "total_spend": 987654321,    "departments_analyzed": 24  },  "transactions_sample": [    {"id":"TX-1001","date":"2024-06-12","department":"Education","amount":9900,"vendor":"Stationery Pvt Ltd","purpose":"Stationery Purchase"},    {"id":"TX-1002","date":"2024-06-13","department":"Health","amount":98000,"vendor":"MediSupplies","purpose":"Medical Consumables"},    {"id":"TX-1003","date":"2024-06-14","department":"Roads","amount":100000,"vendor":"RoadWorks","purpose":"Minor Repair"},    {"id":"TX-1004","date":"2024-06-15","department":"Education","amount":24500,"vendor":"Furniture Co","purpose":"Classroom Furniture"},    {"id":"TX-1005","date":"2024-06-16","department":"Health","amount":99500,"vendor":"PharmaCorp","purpose":"Medicine Procurement"},    {"id":"TX-1006","date":"2024-06-17","department":"Water","amount":12000,"vendor":"PipeWorks","purpose":"Pipeline Maintenance"},    {"id":"TX-1007","date":"2024-06-18","department":"Education","amount":9950,"vendor":"BookHub","purpose":"Library Books"},    {"id":"TX-1008","date":"2024-06-19","department":"Transport","amount":45000,"vendor":"VehicleMaint","purpose":"Bus Maintenance"},    {"id":"TX-1009","date":"2024-06-20","department":"Health","amount":98500,"vendor":"LabEquip","purpose":"Lab Equipment"},    {"id":"TX-1010","date":"2024-06-21","department":"Roads","amount":99000,"vendor":"AsphaltCo","purpose":"Road Resurfacing"},    {"id":"TX-1011","date":"2024-06-22","department":"Education","amount":15000,"vendor":"TechSupplies","purpose":"Computer Lab"},    {"id":"TX-1012","date":"2024-06-23","department":"Water","amount":99800,"vendor":"TankManuf","purpose":"Water Tank"},    {"id":"TX-1013","date":"2024-06-24","department":"Health","amount":34000,"vendor":"HospitalSupply","purpose":"Surgical Supplies"},    {"id":"TX-1014","date":"2024-06-25","department":"Transport","amount":9850,"vendor":"FuelStation","purpose":"Fuel Purchase"},    {"id":"TX-1015","date":"2024-06-26","department":"Education","amount":23000,"vendor":"SportsGear","purpose":"Sports Equipment"},    {"id":"TX-1016","date":"2024-06-27","department":"Roads","amount":67000,"vendor":"BridgeWorks","purpose":"Bridge Repair"},    {"id":"TX-1017","date":"2024-06-28","department":"Health","amount":99900,"vendor":"AmbulanceServ","purpose":"Ambulance Maintenance"},    {"id":"TX-1018","date":"2024-06-29","department":"Water","amount":18000,"vendor":"PumpRepair","purpose":"Pump Replacement"},    {"id":"TX-1019","date":"2024-06-30","department":"Education","amount":56000,"vendor":"BuildingMaint","purpose":"School Renovation"},    {"id":"TX-1020","date":"2024-07-01","department":"Transport","amount":99500,"vendor":"BusDepot","purpose":"Bus Parts"},    {"id":"TX-1021","date":"2024-07-02","department":"Education","amount":12500,"vendor":"StatCo","purpose":"Office Supplies"},    {"id":"TX-1022","date":"2024-07-03","department":"Health","amount":87000,"vendor":"MedEquip","purpose":"Diagnostic Machines"},    {"id":"TX-1023","date":"2024-07-04","department":"Roads","amount":23400,"vendor":"CementCo","purpose":"Road Materials"},    {"id":"TX-1024","date":"2024-07-05","department":"Water","amount":45600,"vendor":"PipeCo","purpose":"Water Pipes"},    {"id":"TX-1025","date":"2024-07-06","department":"Transport","amount":67800,"vendor":"GarageCo","purpose":"Vehicle Repair"},    {"id":"TX-1026","date":"2024-07-07","department":"Education","amount":9700,"vendor":"ChalkBoard Inc","purpose":"Classroom Materials"},    {"id":"TX-1027","date":"2024-07-08","department":"Health","amount":98200,"vendor":"PharmaDistro","purpose":"Drug Supplies"},    {"id":"TX-1028","date":"2024-07-09","department":"Roads","amount":95000,"vendor":"PaveCo","purpose":"Street Resurfacing"},    {"id":"TX-1029","date":"2024-07-10","department":"Water","amount":9600,"vendor":"ValveCo","purpose":"Valve Replacement"},    {"id":"TX-1030","date":"2024-07-11","department":"Transport","amount":98700,"vendor":"TireCo","purpose":"Bus Tires"},    {"id":"TX-1031","date":"2024-07-12","department":"Education","amount":14500,"vendor":"BookWorld","purpose":"Library Books"},    {"id":"TX-1032","date":"2024-07-13","department":"Health","amount":96500,"vendor":"SyringeCo","purpose":"Medical Supplies"},    {"id":"TX-1033","date":"2024-07-14","department":"Roads","amount":32000,"vendor":"SignCo","purpose":"Road Signs"},    {"id":"TX-1034","date":"2024-07-15","department":"Water","amount":9400,"vendor":"PumpTech","purpose":"Pump Repair"},    {"id":"TX-1035","date":"2024-07-16","department":"Transport","amount":97800,"vendor":"EngineParts","purpose":"Engine Maintenance"},    {"id":"TX-1036","date":"2024-07-17","department":"Education","amount":28000,"vendor":"DeskCo","purpose":"Student Desks"},    {"id":"TX-1037","date":"2024-07-18","department":"Health","amount":9300,"vendor":"BandageCo","purpose":"First Aid Supplies"},    {"id":"TX-1038","date":"2024-07-19","department":"Roads","amount":99200,"vendor":"TarCo","purpose":"Road Tar"},    {"id":"TX-1039","date":"2024-07-20","department":"Water","amount":19000,"vendor":"FilterCo","purpose":"Water Filters"},    {"id":"TX-1040","date":"2024-07-21","department":"Transport","amount":9500,"vendor":"BrakeCo","purpose":"Brake Pads"},    {"id":"TX-1041","date":"2024-07-22","department":"Education","amount":97500,"vendor":"LabSupply","purpose":"Science Lab Equipment"},    {"id":"TX-1042","date":"2024-07-23","department":"Health","amount":42000,"vendor":"XRayTech","purpose":"X-Ray Supplies"},    {"id":"TX-1043","date":"2024-07-24","department":"Roads","amount":9800,"vendor":"ConcreteMix","purpose":"Concrete Materials"},    {"id":"TX-1044","date":"2024-07-25","department":"Water","amount":96000,"vendor":"TankClean","purpose":"Tank Cleaning"},    {"id":"TX-1045","date":"2024-07-26","department":"Transport","amount":38000,"vendor":"OilChange","purpose":"Vehicle Oil Change"},    {"id":"TX-1046","date":"2024-07-27","department":"Education","amount":9200,"vendor":"PenSupply","purpose":"Writing Materials"},    {"id":"TX-1047","date":"2024-07-28","department":"Health","amount":99400,"vendor":"IVBags","purpose":"IV Fluids"},    {"id":"TX-1048","date":"2024-07-29","department":"Roads","amount":54000,"vendor":"SteelCo","purpose":"Steel Beams"},    {"id":"TX-1049","date":"2024-07-30","department":"Water","amount":9100,"vendor":"PipeJoint","purpose":"Pipe Joints"},    {"id":"TX-1050","date":"2024-08-01","department":"Transport","amount":95500,"vendor":"SeatCo","purpose":"Bus Seats"},    {"id":"TX-1051","date":"2024-08-02","department":"Education","amount":16000,"vendor":"ChalkCo","purpose":"Chalk & Boards"},    {"id":"TX-1052","date":"2024-08-03","department":"Health","amount":9000,"vendor":"GloveCo","purpose":"Surgical Gloves"},    {"id":"TX-1053","date":"2024-08-04","department":"Roads","amount":98300,"vendor":"GravelCo","purpose":"Road Gravel"},    {"id":"TX-1054","date":"2024-08-05","department":"Water","amount":27000,"vendor":"MotorCo","purpose":"Pump Motors"},    {"id":"TX-1055","date":"2024-08-06","department":"Transport","amount":9750,"vendor":"LightCo","purpose":"Bus Lights"},    {"id":"TX-1056","date":"2024-08-07","department":"Education","amount":96800,"vendor":"ProjectorCo","purpose":"Projectors"},    {"id":"TX-1057","date":"2024-08-08","department":"Health","amount":31000,"vendor":"WheelchairCo","purpose":"Wheelchairs"},    {"id":"TX-1058","date":"2024-08-09","department":"Roads","amount":9650,"vendor":"PaintCo","purpose":"Road Paint"},    {"id":"TX-1059","date":"2024-08-10","department":"Water","amount":94500,"vendor":"MeterCo","purpose":"Water Meters"},    {"id":"TX-1060","date":"2024-08-11","department":"Transport","amount":48000,"vendor":"WindowCo","purpose":"Bus Windows"},
-    {"id":"TX-1061","date":"2024-08-12","department":"Education","amount":9450,"vendor":"MapCo","purpose":"Educational Maps"},
-    {"id":"TX-1062","date":"2024-08-13","department":"Health","amount":97200,"vendor":"OxygenCo","purpose":"Oxygen Cylinders"},
-    {"id":"TX-1063","date":"2024-08-14","department":"Roads","amount":22000,"vendor":"DrainCo","purpose":"Drainage Pipes"},
-    {"id":"TX-1064","date":"2024-08-15","department":"Water","amount":9850,"vendor":"TapCo","purpose":"Water Taps"},
-    {"id":"TX-1065","date":"2024-08-16","department":"Transport","amount":93000,"vendor":"MirrorCo","purpose":"Bus Mirrors"},
-    {"id":"TX-1066","date":"2024-08-17","department":"Education","amount":35000,"vendor":"WhiteboardCo","purpose":"Whiteboards"},
-    {"id":"TX-1067","date":"2024-08-18","department":"Health","amount":9550,"vendor":"ThermoCo","purpose":"Thermometers"},
-    {"id":"TX-1068","date":"2024-08-19","department":"Roads","amount":99100,"vendor":"AsphaltMix","purpose":"Asphalt Mix"},
-    {"id":"TX-1069","date":"2024-08-20","department":"Water","amount":41000,"vendor":"HoseCo","purpose":"Water Hoses"},
-    {"id":"TX-1070","date":"2024-08-21","department":"Transport","amount":9350,"vendor":"HornCo","purpose":"Bus Horns"},
-    {"id":"TX-1071","date":"2024-08-22","department":"Education","amount":95200,"vendor":"ComputerLab","purpose":"Computer Equipment"},
-    {"id":"TX-1072","date":"2024-08-23","department":"Health","amount":26000,"vendor":"StretcherCo","purpose":"Hospital Stretchers"},
-    {"id":"TX-1073","date":"2024-08-24","department":"Roads","amount":9700,"vendor":"BoltCo","purpose":"Road Bolts"},
-    {"id":"TX-1074","date":"2024-08-25","department":"Water","amount":92500,"vendor":"ChlorCo","purpose":"Chlorination Supplies"},
-    {"id":"TX-1075","date":"2024-08-26","department":"Transport","amount":52000,"vendor":"DoorCo","purpose":"Bus Doors"},
-    {"id":"TX-1076","date":"2024-08-27","department":"Education","amount":9250,"vendor":"RulerCo","purpose":"Geometry Sets"},
-    {"id":"TX-1077","date":"2024-08-28","department":"Health","amount":98600,"vendor":"ScannerCo","purpose":"Medical Scanners"},
-    {"id":"TX-1078","date":"2024-08-29","department":"Roads","amount":44000,"vendor":"BarrierCo","purpose":"Safety Barriers"},
-    {"id":"TX-1079","date":"2024-08-30","department":"Water","amount":9900,"vendor":"GaugeCo","purpose":"Pressure Gauges"},
-    {"id":"TX-1080","date":"2024-09-01","department":"Transport","amount":91000,"vendor":"SteeringCo","purpose":"Steering Parts"},
-    {"id":"TX-1081","date":"2024-09-02","department":"Education","amount":17000,"vendor":"GlobeCo","purpose":"Globe Sets"},
-    {"id":"TX-1082","date":"2024-09-03","department":"Health","amount":9400,"vendor":"MaskCo","purpose":"Face Masks"},
-    {"id":"TX-1083","date":"2024-09-04","department":"Roads","amount":96700,"vendor":"RollerCo","purpose":"Road Roller Hire"},
-    {"id":"TX-1084","date":"2024-09-05","department":"Water","amount":33000,"vendor":"TestKit","purpose":"Water Testing Kits"},
-    {"id":"TX-1085","date":"2024-09-06","department":"Transport","amount":9600,"vendor":"ClutchCo","purpose":"Clutch Plates"},
-    {"id":"TX-1086","date":"2024-09-07","department":"Education","amount":94800,"vendor":"AudioCo","purpose":"Audio Systems"},
-    {"id":"TX-1087","date":"2024-09-08","department":"Health","amount":39000,"vendor":"BedCo","purpose":"Hospital Beds"},
-    {"id":"TX-1088","date":"2024-09-09","department":"Roads","amount":9500,"vendor":"NutBolt","purpose":"Nuts and Bolts"},
-    {"id":"TX-1089","date":"2024-09-10","department":"Water","amount":99300,"vendor":"TreatPlant","purpose":"Treatment Chemicals"},
-    {"id":"TX-1090","date":"2024-09-11","department":"Transport","amount":58000,"vendor":"AxleCo","purpose":"Bus Axles"},
-    {"id":"TX-1091","date":"2024-09-12","department":"Education","amount":9150,"vendor":"CrayonCo","purpose":"Art Supplies"},
-    {"id":"TX-1092","date":"2024-09-13","department":"Health","amount":97900,"vendor":"ECGMachine","purpose":"ECG Equipment"},
-    {"id":"TX-1093","date":"2024-09-14","department":"Roads","amount":29000,"vendor":"CurbCo","purpose":"Curb Stones"},
-    {"id":"TX-1094","date":"2024-09-15","department":"Water","amount":9800,"vendor":"SealCo","purpose":"Pipe Seals"},
-    {"id":"TX-1095","date":"2024-09-16","department":"Transport","amount":90500,"vendor":"RadiatorCo","purpose":"Radiators"},
-    {"id":"TX-1096","date":"2024-09-17","department":"Education","amount":46000,"vendor":"LabCoat","purpose":"Lab Equipment"},
-    {"id":"TX-1097","date":"2024-09-18","department":"Health","amount":9700,"vendor":"SyringePump","purpose":"Syringe Pumps"},
-    {"id":"TX-1098","date":"2024-09-19","department":"Roads","amount":98900,"vendor":"BridgeCo","purpose":"Bridge Repairs"},
-    {"id":"TX-1099","date":"2024-09-20","department":"Water","amount":21000,"vendor":"BoosterCo","purpose":"Booster Pumps"},
-    {"id":"TX-1100","date":"2024-09-21","department":"Transport","amount":9950,"vendor":"WiperCo","purpose":"Windshield Wipers"},
-    {"id":"TX-1101","date":"2024-09-22","department":"Education","amount":93500,"vendor":"SmartBoard","purpose":"Smart Boards"},
-    {"id":"TX-1102","date":"2024-09-23","department":"Health","amount":36000,"vendor":"DefibCo","purpose":"Defibrillators"},
-    {"id":"TX-1103","date":"2024-09-24","department":"Roads","amount":9300,"vendor":"ReflectorCo","purpose":"Road Reflectors"},
-    {"id":"TX-1104","date":"2024-09-25","department":"Water","amount":95700,"vendor":"ReservoirCo","purpose":"Reservoir Maintenance"},
-    {"id":"TX-1105","date":"2024-09-26","department":"Transport","amount":63000,"vendor":"SuspensionCo","purpose":"Suspension Parts"},
-    {"id":"TX-1106","date":"2024-09-27","department":"Education","amount":9050,"vendor":"EraserCo","purpose":"Erasers & Sharpeners"},
-    {"id":"TX-1107","date":"2024-09-28","department":"Health","amount":99600,"vendor":"UltrasoundCo","purpose":"Ultrasound Machine"},
-    {"id":"TX-1108","date":"2024-09-29","department":"Roads","amount":38000,"vendor":"ExpansionCo","purpose":"Expansion Joints"},
-    {"id":"TX-1109","date":"2024-09-30","department":"Water","amount":9650,"vendor":"ConnectorCo","purpose":"Pipe Connectors"},
-    {"id":"TX-1110","date":"2024-10-01","department":"Transport","amount":92800,"vendor":"TransCo","purpose":"Transmission Parts"},
-    {"id":"TX-1111","date":"2024-10-02","department":"Education","amount":24000,"vendor":"ChairCo","purpose":"Student Chairs"},
-    {"id":"TX-1112","date":"2024-10-03","department":"Health","amount":9900,"vendor":"TestTube","purpose":"Lab Test Tubes"},
-    {"id":"TX-1113","date":"2024-10-04","department":"Roads","amount":97400,"vendor":"MarkerCo","purpose":"Road Markers"},
-    {"id":"TX-1114","date":"2024-10-05","department":"Water","amount":49000,"vendor":"StorageCo","purpose":"Water Storage Tanks"},
-    {"id":"TX-1115","date":"2024-10-06","department":"Transport","amount":9750,"vendor":"BatteryCorner","purpose":"Bus Batteries"},
-    {"id":"TX-1116","date":"2024-10-07","department":"Education","amount":91200,"vendor":"TabletCo","purpose":"Educational Tablets"},
-    {"id":"TX-1117","date":"2024-10-08","department":"Health","amount":43000,"vendor":"MonitorCo","purpose":"Patient Monitors"},
-    {"id":"TX-1118","date":"2024-10-09","department":"Roads","amount":9450,"vendor":"WireCo","purpose":"Wire Mesh"},
-    {"id":"TX-1119","date":"2024-10-10","department":"Water","amount":98100,"vendor":"PurifierCo","purpose":"Water Purifiers"},
-    {"id":"TX-1120","date":"2024-10-11","department":"Transport","amount":55000,"vendor":"ExhaustCo","purpose":"Exhaust Systems"},
-    {"id":"TX-1121","date":"2024-10-12","department":"Education","amount":9350,"vendor":"ScissorCo","purpose":"Scissors & Craft Tools"},
-    {"id":"TX-1122","date":"2024-10-13","department":"Health","amount":96300,"vendor":"VentilatorCo","purpose":"Ventilators"},
-    {"id":"TX-1123","date":"2024-10-14","department":"Roads","amount":32000,"vendor":"ManholeCo","purpose":"Manhole Covers"},
-    {"id":"TX-1124","date":"2024-10-15","department":"Water","amount":9550,"vendor":"AdapterCo","purpose":"Pipe Adapters"},
-    {"id":"TX-1125","date":"2024-10-16","department":"Transport","amount":99700,"vendor":"AlternatorCo","purpose":"Alternators"}
-  ],
-  "departments": [
+{
+  "summary": {
+    "total_transactions": 500,
+    "total_spend": 760000000000,
+    "departments_analyzed": 6
+  },
+  "transactions_sample": [
     {
-      "dept_id":"D-EDU",
-      "name":"Education",
-      "total_spend":12345678,
-      "transactions_count":4520
+      "id": "TX-1001",
+      "date": "2024-03-20",
+      "department": "PWD",
+      "amount": 431594.85,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
     },
     {
-      "dept_id":"D-HEALTH",
-      "name":"Health",
-      "total_spend":98765432,
-      "transactions_count":5120
+      "id": "TX-1002",
+      "date": "2024-05-25",
+      "department": "Health",
+      "amount": 710953.85,
+      "vendor": "HLL Lifecare",
+      "purpose": "Free Lab Test Subsidy"
     },
     {
-      "dept_id":"D-ROADS",
-      "name":"Roads & Infrastructure",
-      "total_spend":76543210,
-      "transactions_count":3890
+      "id": "TX-1003",
+      "date": "2024-10-05",
+      "department": "PWD",
+      "amount": 97230.67,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
     },
     {
-      "dept_id":"D-WATER",
-      "name":"Water Supply",
-      "total_spend":54321098,
-      "transactions_count":3210
+      "id": "TX-1004",
+      "date": "2024-03-17",
+      "department": "Education",
+      "amount": 357724.04,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
     },
     {
-      "dept_id":"D-TRANSPORT",
-      "name":"Transport",
-      "total_spend":43210987,
-      "transactions_count":2890
+      "id": "TX-1005",
+      "date": "2024-06-16",
+      "department": "Transport",
+      "amount": 1995749.17,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1006",
+      "date": "2024-09-27",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1007",
+      "date": "2024-03-22",
+      "department": "Water Supply",
+      "amount": 1682338.14,
+      "vendor": "DJB Contractor",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1008",
+      "date": "2024-08-07",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1009",
+      "date": "2024-04-03",
+      "department": "PWD",
+      "amount": 689928.09,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1010",
+      "date": "2024-03-05",
+      "department": "Education",
+      "amount": 535949.3,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1011",
+      "date": "2024-03-13",
+      "department": "Water Supply",
+      "amount": 317375.2,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1012",
+      "date": "2024-09-02",
+      "department": "Education",
+      "amount": 1451091.14,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1013",
+      "date": "2024-03-24",
+      "department": "Health",
+      "amount": 309882.25,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1014",
+      "date": "2024-07-28",
+      "department": "Water Supply",
+      "amount": 1673464.45,
+      "vendor": "DJB Contractor",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1015",
+      "date": "2024-01-10",
+      "department": "PWD",
+      "amount": 551711.88,
+      "vendor": "L&T",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1016",
+      "date": "2024-03-15",
+      "department": "Education",
+      "amount": 331458.67,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1017",
+      "date": "2024-07-26",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1018",
+      "date": "2024-03-08",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1019",
+      "date": "2024-05-30",
+      "department": "Education",
+      "amount": 329167.43,
+      "vendor": "EdTech Solutions",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1020",
+      "date": "2024-07-17",
+      "department": "Social Welfare",
+      "amount": 10000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1021",
+      "date": "2024-04-01",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1022",
+      "date": "2024-01-17",
+      "department": "Water Supply",
+      "amount": 255015.67,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1023",
+      "date": "2024-09-17",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1024",
+      "date": "2024-01-04",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1025",
+      "date": "2024-07-03",
+      "department": "PWD",
+      "amount": 1426376.84,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1026",
+      "date": "2024-07-09",
+      "department": "PWD",
+      "amount": 253005.26,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1027",
+      "date": "2024-10-16",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1028",
+      "date": "2024-03-25",
+      "department": "Water Supply",
+      "amount": 355983.41,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1029",
+      "date": "2024-10-24",
+      "department": "Education",
+      "amount": 679413.58,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1030",
+      "date": "2024-01-10",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1031",
+      "date": "2024-07-18",
+      "department": "Education",
+      "amount": 1453544.22,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1032",
+      "date": "2024-04-03",
+      "department": "Education",
+      "amount": 1583794.53,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1033",
+      "date": "2024-04-19",
+      "department": "Water Supply",
+      "amount": 79531.0,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1034",
+      "date": "2024-08-19",
+      "department": "Transport",
+      "amount": 39468.97,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1035",
+      "date": "2024-06-25",
+      "department": "Transport",
+      "amount": 1490199.27,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1036",
+      "date": "2024-05-17",
+      "department": "Health",
+      "amount": 545410.71,
+      "vendor": "HLL Lifecare",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1037",
+      "date": "2024-08-27",
+      "department": "Transport",
+      "amount": 1405079.51,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1038",
+      "date": "2024-09-22",
+      "department": "Water Supply",
+      "amount": 1902061.53,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1039",
+      "date": "2024-04-17",
+      "department": "PWD",
+      "amount": 783328.13,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1040",
+      "date": "2024-04-17",
+      "department": "Transport",
+      "amount": 13382586.200000001,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1041",
+      "date": "2024-05-22",
+      "department": "PWD",
+      "amount": 1025223.93,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1042",
+      "date": "2024-01-26",
+      "department": "Transport",
+      "amount": 272475.64,
+      "vendor": "Tata Motors",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1043",
+      "date": "2024-06-18",
+      "department": "PWD",
+      "amount": 503653.19,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1044",
+      "date": "2024-09-24",
+      "department": "Education",
+      "amount": 98757.68,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1045",
+      "date": "2024-02-01",
+      "department": "PWD",
+      "amount": 1498054.96,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1046",
+      "date": "2024-01-07",
+      "department": "Water Supply",
+      "amount": 786830.04,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1047",
+      "date": "2024-06-29",
+      "department": "Education",
+      "amount": 720412.88,
+      "vendor": "EdTech Solutions",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1048",
+      "date": "2024-04-13",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1049",
+      "date": "2024-04-04",
+      "department": "PWD",
+      "amount": 839963.61,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1050",
+      "date": "2024-08-19",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1051",
+      "date": "2024-08-15",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1052",
+      "date": "2024-06-22",
+      "department": "PWD",
+      "amount": 1624508.79,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1053",
+      "date": "2024-10-24",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1054",
+      "date": "2024-09-08",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1055",
+      "date": "2024-01-10",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1056",
+      "date": "2024-10-13",
+      "department": "PWD",
+      "amount": 1076772.22,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1057",
+      "date": "2024-03-13",
+      "department": "Transport",
+      "amount": 856334.77,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1058",
+      "date": "2024-04-13",
+      "department": "Water Supply",
+      "amount": 338697.49,
+      "vendor": "Jal Board Works",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1059",
+      "date": "2024-01-26",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1060",
+      "date": "2024-06-13",
+      "department": "Health",
+      "amount": 8966387.9,
+      "vendor": "HLL Lifecare",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1061",
+      "date": "2024-07-13",
+      "department": "PWD",
+      "amount": 703200.07,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1062",
+      "date": "2024-04-15",
+      "department": "Transport",
+      "amount": 36967.91,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1063",
+      "date": "2024-10-04",
+      "department": "PWD",
+      "amount": 1175658.13,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1064",
+      "date": "2024-06-17",
+      "department": "PWD",
+      "amount": 1379138.37,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1065",
+      "date": "2024-07-08",
+      "department": "PWD",
+      "amount": 1942121.41,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1066",
+      "date": "2024-06-19",
+      "department": "PWD",
+      "amount": 1067803.78,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1067",
+      "date": "2024-02-04",
+      "department": "PWD",
+      "amount": 707378.71,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1068",
+      "date": "2024-09-27",
+      "department": "Health",
+      "amount": 1960893.86,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1069",
+      "date": "2024-08-13",
+      "department": "Health",
+      "amount": 1571059.61,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1070",
+      "date": "2024-02-08",
+      "department": "PWD",
+      "amount": 325281.83,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1071",
+      "date": "2024-09-26",
+      "department": "Water Supply",
+      "amount": 1405186.13,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1072",
+      "date": "2024-04-18",
+      "department": "Health",
+      "amount": 812326.51,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1073",
+      "date": "2024-02-10",
+      "department": "Transport",
+      "amount": 1064143.36,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1074",
+      "date": "2024-09-05",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1075",
+      "date": "2024-04-01",
+      "department": "PWD",
+      "amount": 282720.9,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1076",
+      "date": "2024-08-09",
+      "department": "Health",
+      "amount": 259504.85,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1077",
+      "date": "2024-10-09",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1078",
+      "date": "2024-01-23",
+      "department": "PWD",
+      "amount": 1467728.76,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1079",
+      "date": "2024-04-25",
+      "department": "Health",
+      "amount": 1199100.73,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1080",
+      "date": "2024-09-24",
+      "department": "PWD",
+      "amount": 15356226.6,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1081",
+      "date": "2024-10-06",
+      "department": "Education",
+      "amount": 1544201.41,
+      "vendor": "Stationery Hub",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1082",
+      "date": "2024-02-26",
+      "department": "Health",
+      "amount": 756962.75,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1083",
+      "date": "2024-04-20",
+      "department": "Transport",
+      "amount": 1254788.34,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1084",
+      "date": "2024-10-03",
+      "department": "PWD",
+      "amount": 1594445.91,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1085",
+      "date": "2024-04-07",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1086",
+      "date": "2024-05-28",
+      "department": "PWD",
+      "amount": 1360805.45,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1087",
+      "date": "2024-05-26",
+      "department": "PWD",
+      "amount": 1034032.79,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1088",
+      "date": "2024-04-10",
+      "department": "Transport",
+      "amount": 1530777.14,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1089",
+      "date": "2024-03-31",
+      "department": "Health",
+      "amount": 1035641.44,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1090",
+      "date": "2024-10-26",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1091",
+      "date": "2024-07-21",
+      "department": "Education",
+      "amount": 461411.17,
+      "vendor": "Stationery Hub",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1092",
+      "date": "2024-10-07",
+      "department": "Transport",
+      "amount": 1165741.67,
+      "vendor": "ElectricCharge India",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1093",
+      "date": "2024-07-09",
+      "department": "Education",
+      "amount": 1903643.23,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1094",
+      "date": "2024-07-12",
+      "department": "Education",
+      "amount": 1862561.66,
+      "vendor": "Stationery Hub",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1095",
+      "date": "2024-03-04",
+      "department": "Water Supply",
+      "amount": 1907521.09,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1096",
+      "date": "2024-08-16",
+      "department": "Health",
+      "amount": 716171.13,
+      "vendor": "Standard Pharma",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1097",
+      "date": "2024-01-04",
+      "department": "PWD",
+      "amount": 240435.22,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1098",
+      "date": "2024-05-26",
+      "department": "Water Supply",
+      "amount": 67783.6,
+      "vendor": "DJB Contractor",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1099",
+      "date": "2024-06-27",
+      "department": "Education",
+      "amount": 982494.43,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1100",
+      "date": "2024-08-09",
+      "department": "Education",
+      "amount": 1832314.9,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1101",
+      "date": "2024-07-28",
+      "department": "Health",
+      "amount": 636607.15,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1102",
+      "date": "2024-07-25",
+      "department": "PWD",
+      "amount": 1428375.77,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1103",
+      "date": "2024-06-06",
+      "department": "Education",
+      "amount": 328853.52,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1104",
+      "date": "2024-02-11",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1105",
+      "date": "2024-05-22",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1106",
+      "date": "2024-09-25",
+      "department": "Education",
+      "amount": 1768136.2,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1107",
+      "date": "2024-05-26",
+      "department": "Health",
+      "amount": 952364.31,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1108",
+      "date": "2024-03-08",
+      "department": "Education",
+      "amount": 1917328.63,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1109",
+      "date": "2024-05-02",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1110",
+      "date": "2024-01-16",
+      "department": "Education",
+      "amount": 643592.58,
+      "vendor": "NCERT Delhi",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1111",
+      "date": "2024-07-15",
+      "department": "Health",
+      "amount": 358942.05,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1112",
+      "date": "2024-08-18",
+      "department": "Water Supply",
+      "amount": 675296.4,
+      "vendor": "Jal Board Works",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1113",
+      "date": "2024-04-01",
+      "department": "Health",
+      "amount": 896726.5,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1114",
+      "date": "2024-10-02",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1115",
+      "date": "2024-06-03",
+      "department": "PWD",
+      "amount": 1436389.85,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1116",
+      "date": "2024-05-28",
+      "department": "Water Supply",
+      "amount": 45154.53,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1117",
+      "date": "2024-07-12",
+      "department": "Water Supply",
+      "amount": 659762.81,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1118",
+      "date": "2024-10-13",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1119",
+      "date": "2024-08-15",
+      "department": "Education",
+      "amount": 346096.5,
+      "vendor": "NCERT Delhi",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1120",
+      "date": "2024-05-19",
+      "department": "Transport",
+      "amount": 4901408.4,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1121",
+      "date": "2024-04-18",
+      "department": "PWD",
+      "amount": 310167.88,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1122",
+      "date": "2024-08-25",
+      "department": "PWD",
+      "amount": 658290.07,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1123",
+      "date": "2024-08-02",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1124",
+      "date": "2024-04-27",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1125",
+      "date": "2024-06-23",
+      "department": "PWD",
+      "amount": 532519.25,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1126",
+      "date": "2024-05-03",
+      "department": "Health",
+      "amount": 1523170.68,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1127",
+      "date": "2024-08-01",
+      "department": "Transport",
+      "amount": 1897108.83,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1128",
+      "date": "2024-08-16",
+      "department": "PWD",
+      "amount": 1155177.29,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1129",
+      "date": "2024-07-31",
+      "department": "Transport",
+      "amount": 719851.85,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1130",
+      "date": "2024-02-07",
+      "department": "Water Supply",
+      "amount": 890771.68,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1131",
+      "date": "2024-04-07",
+      "department": "Education",
+      "amount": 517253.47,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1132",
+      "date": "2024-03-08",
+      "department": "Transport",
+      "amount": 1651810.66,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1133",
+      "date": "2024-09-18",
+      "department": "Health",
+      "amount": 699449.84,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1134",
+      "date": "2024-03-01",
+      "department": "PWD",
+      "amount": 1000303.49,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1135",
+      "date": "2024-01-24",
+      "department": "Health",
+      "amount": 164884.37,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1136",
+      "date": "2024-06-11",
+      "department": "Water Supply",
+      "amount": 935572.14,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1137",
+      "date": "2024-10-13",
+      "department": "Transport",
+      "amount": 483834.49,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1138",
+      "date": "2024-07-26",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1139",
+      "date": "2024-04-15",
+      "department": "Education",
+      "amount": 1003050.22,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1140",
+      "date": "2024-09-30",
+      "department": "Health",
+      "amount": 10226139.5,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1141",
+      "date": "2024-06-20",
+      "department": "PWD",
+      "amount": 483659.55,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1142",
+      "date": "2024-09-02",
+      "department": "PWD",
+      "amount": 837743.27,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1143",
+      "date": "2024-04-20",
+      "department": "Water Supply",
+      "amount": 357181.1,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1144",
+      "date": "2024-06-24",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1145",
+      "date": "2024-02-16",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1146",
+      "date": "2024-02-03",
+      "department": "Education",
+      "amount": 1514323.22,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1147",
+      "date": "2024-02-25",
+      "department": "Water Supply",
+      "amount": 1342621.83,
+      "vendor": "Tata Projects",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1148",
+      "date": "2024-03-03",
+      "department": "PWD",
+      "amount": 274569.83,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1149",
+      "date": "2024-08-04",
+      "department": "Education",
+      "amount": 241183.64,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1150",
+      "date": "2024-02-12",
+      "department": "Education",
+      "amount": 846726.8,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1151",
+      "date": "2024-06-26",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1152",
+      "date": "2024-09-17",
+      "department": "PWD",
+      "amount": 703821.36,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1153",
+      "date": "2024-08-29",
+      "department": "PWD",
+      "amount": 271262.48,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1154",
+      "date": "2024-09-26",
+      "department": "Water Supply",
+      "amount": 102278.02,
+      "vendor": "DJB Contractor",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1155",
+      "date": "2024-06-19",
+      "department": "Transport",
+      "amount": 1479756.31,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1156",
+      "date": "2024-01-27",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1157",
+      "date": "2024-05-27",
+      "department": "Water Supply",
+      "amount": 1302907.47,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1158",
+      "date": "2024-04-28",
+      "department": "Education",
+      "amount": 1556498.66,
+      "vendor": "NCERT Delhi",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1159",
+      "date": "2024-03-10",
+      "department": "Water Supply",
+      "amount": 1837104.1,
+      "vendor": "DJB Contractor",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1160",
+      "date": "2024-03-08",
+      "department": "PWD",
+      "amount": 6110822.3,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1161",
+      "date": "2024-07-27",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1162",
+      "date": "2024-04-17",
+      "department": "Transport",
+      "amount": 459731.35,
+      "vendor": "DTC Delhi",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1163",
+      "date": "2024-04-16",
+      "department": "Health",
+      "amount": 214983.38,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1164",
+      "date": "2024-08-12",
+      "department": "Transport",
+      "amount": 1853639.87,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1165",
+      "date": "2024-07-25",
+      "department": "Water Supply",
+      "amount": 1616325.99,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1166",
+      "date": "2024-10-23",
+      "department": "Health",
+      "amount": 965279.79,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1167",
+      "date": "2024-06-10",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1168",
+      "date": "2024-07-26",
+      "department": "PWD",
+      "amount": 1548096.28,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1169",
+      "date": "2024-04-21",
+      "department": "Education",
+      "amount": 575917.34,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1170",
+      "date": "2024-05-06",
+      "department": "PWD",
+      "amount": 1451082.14,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1171",
+      "date": "2024-03-29",
+      "department": "Water Supply",
+      "amount": 262130.4,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1172",
+      "date": "2024-02-11",
+      "department": "Education",
+      "amount": 1520515.64,
+      "vendor": "NCERT Delhi",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1173",
+      "date": "2024-09-14",
+      "department": "Education",
+      "amount": 1882832.7,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1174",
+      "date": "2024-05-04",
+      "department": "Transport",
+      "amount": 193072.16,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1175",
+      "date": "2024-02-08",
+      "department": "Water Supply",
+      "amount": 685542.69,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1176",
+      "date": "2024-04-21",
+      "department": "PWD",
+      "amount": 1915092.81,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1177",
+      "date": "2024-03-27",
+      "department": "Health",
+      "amount": 1076022.82,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1178",
+      "date": "2024-01-17",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1179",
+      "date": "2024-04-26",
+      "department": "Health",
+      "amount": 90355.92,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1180",
+      "date": "2024-01-25",
+      "department": "Education",
+      "amount": 395784.7,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1181",
+      "date": "2024-08-28",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1182",
+      "date": "2024-06-14",
+      "department": "Health",
+      "amount": 23287.1,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1183",
+      "date": "2024-08-30",
+      "department": "Transport",
+      "amount": 800636.06,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1184",
+      "date": "2024-10-09",
+      "department": "Water Supply",
+      "amount": 409211.15,
+      "vendor": "Jal Board Works",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1185",
+      "date": "2024-03-07",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1186",
+      "date": "2024-06-19",
+      "department": "Education",
+      "amount": 610479.47,
+      "vendor": "Stationery Hub",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1187",
+      "date": "2024-04-11",
+      "department": "Water Supply",
+      "amount": 208109.93,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1188",
+      "date": "2024-09-25",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1189",
+      "date": "2024-07-24",
+      "department": "Health",
+      "amount": 1019711.17,
+      "vendor": "HLL Lifecare",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1190",
+      "date": "2024-10-04",
+      "department": "Transport",
+      "amount": 369147.85,
+      "vendor": "Tata Motors",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1191",
+      "date": "2024-05-06",
+      "department": "Education",
+      "amount": 1461203.47,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1192",
+      "date": "2024-04-20",
+      "department": "Water Supply",
+      "amount": 696969.55,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1193",
+      "date": "2024-07-31",
+      "department": "Education",
+      "amount": 1330109.92,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1194",
+      "date": "2024-08-10",
+      "department": "Water Supply",
+      "amount": 1448601.38,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1195",
+      "date": "2024-10-10",
+      "department": "Transport",
+      "amount": 847569.91,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1196",
+      "date": "2024-07-07",
+      "department": "Transport",
+      "amount": 501484.36,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1197",
+      "date": "2024-01-25",
+      "department": "Water Supply",
+      "amount": 1686348.15,
+      "vendor": "Jal Board Works",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1198",
+      "date": "2024-02-12",
+      "department": "PWD",
+      "amount": 1782489.89,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1199",
+      "date": "2024-07-27",
+      "department": "Transport",
+      "amount": 964682.43,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1200",
+      "date": "2024-04-11",
+      "department": "Social Welfare",
+      "amount": 25000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1201",
+      "date": "2024-01-26",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1202",
+      "date": "2024-09-09",
+      "department": "Health",
+      "amount": 871803.21,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1203",
+      "date": "2024-07-14",
+      "department": "Education",
+      "amount": 1434615.17,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1204",
+      "date": "2024-02-12",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1205",
+      "date": "2024-01-19",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1206",
+      "date": "2024-03-10",
+      "department": "Health",
+      "amount": 1735504.77,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1207",
+      "date": "2024-05-21",
+      "department": "Education",
+      "amount": 1985181.21,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1208",
+      "date": "2024-09-24",
+      "department": "PWD",
+      "amount": 55012.6,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1209",
+      "date": "2024-03-22",
+      "department": "Education",
+      "amount": 1685554.79,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1210",
+      "date": "2024-03-16",
+      "department": "Education",
+      "amount": 1007758.36,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1211",
+      "date": "2024-07-26",
+      "department": "Transport",
+      "amount": 1306526.88,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1212",
+      "date": "2024-10-03",
+      "department": "PWD",
+      "amount": 963778.67,
+      "vendor": "L&T",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1213",
+      "date": "2024-09-06",
+      "department": "Health",
+      "amount": 625763.37,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1214",
+      "date": "2024-05-11",
+      "department": "PWD",
+      "amount": 16546.51,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1215",
+      "date": "2024-02-26",
+      "department": "Water Supply",
+      "amount": 1099722.87,
+      "vendor": "Tata Projects",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1216",
+      "date": "2024-10-05",
+      "department": "Water Supply",
+      "amount": 1746393.37,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1217",
+      "date": "2024-01-29",
+      "department": "Water Supply",
+      "amount": 233458.32,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1218",
+      "date": "2024-02-06",
+      "department": "Water Supply",
+      "amount": 670951.39,
+      "vendor": "Jal Board Works",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1219",
+      "date": "2024-03-23",
+      "department": "PWD",
+      "amount": 710296.7,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1220",
+      "date": "2024-05-15",
+      "department": "Social Welfare",
+      "amount": 25000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1221",
+      "date": "2024-06-18",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1222",
+      "date": "2024-08-01",
+      "department": "PWD",
+      "amount": 779089.83,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1223",
+      "date": "2024-04-12",
+      "department": "Transport",
+      "amount": 1357067.63,
+      "vendor": "ElectricCharge India",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1224",
+      "date": "2024-10-11",
+      "department": "PWD",
+      "amount": 1510499.21,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1225",
+      "date": "2024-04-02",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1226",
+      "date": "2024-05-04",
+      "department": "Water Supply",
+      "amount": 1035137.99,
+      "vendor": "Jal Board Works",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1227",
+      "date": "2024-02-29",
+      "department": "Water Supply",
+      "amount": 1967890.66,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1228",
+      "date": "2024-03-03",
+      "department": "PWD",
+      "amount": 1405792.94,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1229",
+      "date": "2024-03-06",
+      "department": "PWD",
+      "amount": 1038841.81,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1230",
+      "date": "2024-01-07",
+      "department": "Water Supply",
+      "amount": 180638.81,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1231",
+      "date": "2024-05-18",
+      "department": "PWD",
+      "amount": 1837867.09,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1232",
+      "date": "2024-02-21",
+      "department": "Health",
+      "amount": 1289765.25,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1233",
+      "date": "2024-06-16",
+      "department": "PWD",
+      "amount": 548706.85,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1234",
+      "date": "2024-06-24",
+      "department": "PWD",
+      "amount": 1574496.88,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1235",
+      "date": "2024-02-27",
+      "department": "PWD",
+      "amount": 356996.27,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1236",
+      "date": "2024-06-03",
+      "department": "Health",
+      "amount": 1616400.33,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1237",
+      "date": "2024-10-04",
+      "department": "Water Supply",
+      "amount": 826984.11,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1238",
+      "date": "2024-07-23",
+      "department": "PWD",
+      "amount": 1398337.88,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1239",
+      "date": "2024-09-23",
+      "department": "Water Supply",
+      "amount": 1935096.01,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1240",
+      "date": "2024-05-05",
+      "department": "Transport",
+      "amount": 7096668.6,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1241",
+      "date": "2024-02-21",
+      "department": "Education",
+      "amount": 1352610.74,
+      "vendor": "NCERT Delhi",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1242",
+      "date": "2024-04-07",
+      "department": "Education",
+      "amount": 5574.8,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1243",
+      "date": "2024-05-02",
+      "department": "Education",
+      "amount": 1234504.45,
+      "vendor": "Stationery Hub",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1244",
+      "date": "2024-10-18",
+      "department": "Water Supply",
+      "amount": 219813.95,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1245",
+      "date": "2024-07-16",
+      "department": "Health",
+      "amount": 617815.35,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1246",
+      "date": "2024-03-20",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1247",
+      "date": "2024-10-21",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1248",
+      "date": "2024-04-14",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1249",
+      "date": "2024-03-08",
+      "department": "PWD",
+      "amount": 1576861.25,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1250",
+      "date": "2024-04-24",
+      "department": "Health",
+      "amount": 1246798.53,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1251",
+      "date": "2024-04-08",
+      "department": "Transport",
+      "amount": 1105647.85,
+      "vendor": "Tata Motors",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1252",
+      "date": "2024-03-02",
+      "department": "Education",
+      "amount": 1485856.24,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1253",
+      "date": "2024-06-30",
+      "department": "Health",
+      "amount": 186411.99,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1254",
+      "date": "2024-01-01",
+      "department": "Education",
+      "amount": 440272.67,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1255",
+      "date": "2024-07-07",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1256",
+      "date": "2024-01-21",
+      "department": "Transport",
+      "amount": 547641.11,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1257",
+      "date": "2024-07-28",
+      "department": "Health",
+      "amount": 1334726.51,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1258",
+      "date": "2024-04-02",
+      "department": "PWD",
+      "amount": 1813848.34,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1259",
+      "date": "2024-07-09",
+      "department": "Education",
+      "amount": 449084.14,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1260",
+      "date": "2024-02-18",
+      "department": "Transport",
+      "amount": 8134942.6,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1261",
+      "date": "2024-03-18",
+      "department": "Education",
+      "amount": 327985.2,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1262",
+      "date": "2024-08-14",
+      "department": "PWD",
+      "amount": 749179.06,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1263",
+      "date": "2024-03-17",
+      "department": "Transport",
+      "amount": 581760.8,
+      "vendor": "ElectricCharge India",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1264",
+      "date": "2024-02-05",
+      "department": "PWD",
+      "amount": 1063276.7,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1265",
+      "date": "2024-10-01",
+      "department": "Education",
+      "amount": 1920355.45,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1266",
+      "date": "2024-03-13",
+      "department": "Transport",
+      "amount": 65893.41,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1267",
+      "date": "2024-06-24",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1268",
+      "date": "2024-01-26",
+      "department": "Transport",
+      "amount": 421172.24,
+      "vendor": "DTC Delhi",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1269",
+      "date": "2024-02-04",
+      "department": "Water Supply",
+      "amount": 1022353.71,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1270",
+      "date": "2024-03-18",
+      "department": "PWD",
+      "amount": 921992.95,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1271",
+      "date": "2024-06-13",
+      "department": "Water Supply",
+      "amount": 1822677.51,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1272",
+      "date": "2024-08-16",
+      "department": "Education",
+      "amount": 830015.67,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1273",
+      "date": "2024-07-08",
+      "department": "PWD",
+      "amount": 702404.6,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1274",
+      "date": "2024-06-03",
+      "department": "PWD",
+      "amount": 196652.17,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1275",
+      "date": "2024-01-30",
+      "department": "Health",
+      "amount": 971923.26,
+      "vendor": "HLL Lifecare",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1276",
+      "date": "2024-03-24",
+      "department": "PWD",
+      "amount": 695036.37,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1277",
+      "date": "2024-04-30",
+      "department": "Transport",
+      "amount": 1156597.36,
+      "vendor": "ElectricCharge India",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1278",
+      "date": "2024-04-08",
+      "department": "Health",
+      "amount": 201545.83,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1279",
+      "date": "2024-04-16",
+      "department": "PWD",
+      "amount": 1138014.42,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1280",
+      "date": "2024-05-14",
+      "department": "Education",
+      "amount": 17243444.7,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1281",
+      "date": "2024-05-01",
+      "department": "PWD",
+      "amount": 90712.15,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1282",
+      "date": "2024-04-27",
+      "department": "Transport",
+      "amount": 736651.31,
+      "vendor": "DTC Delhi",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1283",
+      "date": "2024-01-12",
+      "department": "PWD",
+      "amount": 567972.1,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1284",
+      "date": "2024-08-05",
+      "department": "Transport",
+      "amount": 1847569.66,
+      "vendor": "ElectricCharge India",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1285",
+      "date": "2024-08-05",
+      "department": "Transport",
+      "amount": 1597669.76,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1286",
+      "date": "2024-01-19",
+      "department": "PWD",
+      "amount": 1677527.31,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1287",
+      "date": "2024-06-10",
+      "department": "Health",
+      "amount": 436972.05,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1288",
+      "date": "2024-05-22",
+      "department": "Transport",
+      "amount": 806984.28,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1289",
+      "date": "2024-02-06",
+      "department": "Transport",
+      "amount": 457723.76,
+      "vendor": "ElectricCharge India",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1290",
+      "date": "2024-08-13",
+      "department": "Water Supply",
+      "amount": 1520148.74,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1291",
+      "date": "2024-04-17",
+      "department": "Education",
+      "amount": 1235552.48,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1292",
+      "date": "2024-04-08",
+      "department": "Water Supply",
+      "amount": 1800394.76,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1293",
+      "date": "2024-07-04",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1294",
+      "date": "2024-06-16",
+      "department": "Education",
+      "amount": 644065.04,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1295",
+      "date": "2024-04-26",
+      "department": "Transport",
+      "amount": 122590.89,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1296",
+      "date": "2024-02-13",
+      "department": "Health",
+      "amount": 1170286.14,
+      "vendor": "Standard Pharma",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1297",
+      "date": "2024-08-15",
+      "department": "Health",
+      "amount": 1689641.41,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1298",
+      "date": "2024-08-16",
+      "department": "Health",
+      "amount": 1074534.14,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1299",
+      "date": "2024-01-08",
+      "department": "Transport",
+      "amount": 1475717.38,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1300",
+      "date": "2024-05-09",
+      "department": "Social Welfare",
+      "amount": 30000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1301",
+      "date": "2024-05-17",
+      "department": "Water Supply",
+      "amount": 1550302.53,
+      "vendor": "DJB Contractor",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1302",
+      "date": "2024-03-19",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1303",
+      "date": "2024-03-19",
+      "department": "Water Supply",
+      "amount": 472275.07,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1304",
+      "date": "2024-06-02",
+      "department": "Education",
+      "amount": 426038.91,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1305",
+      "date": "2024-05-04",
+      "department": "Transport",
+      "amount": 883624.82,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1306",
+      "date": "2024-08-03",
+      "department": "Water Supply",
+      "amount": 1352268.69,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1307",
+      "date": "2024-10-26",
+      "department": "PWD",
+      "amount": 1182597.55,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1308",
+      "date": "2024-04-18",
+      "department": "PWD",
+      "amount": 1253907.08,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1309",
+      "date": "2024-06-10",
+      "department": "Health",
+      "amount": 1644892.24,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1310",
+      "date": "2024-09-04",
+      "department": "Water Supply",
+      "amount": 310493.48,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1311",
+      "date": "2024-09-23",
+      "department": "PWD",
+      "amount": 692273.53,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1312",
+      "date": "2024-03-05",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1313",
+      "date": "2024-02-16",
+      "department": "PWD",
+      "amount": 1069989.98,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1314",
+      "date": "2024-02-25",
+      "department": "PWD",
+      "amount": 288001.97,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1315",
+      "date": "2024-03-12",
+      "department": "PWD",
+      "amount": 1226273.71,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1316",
+      "date": "2024-08-09",
+      "department": "Health",
+      "amount": 665150.96,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1317",
+      "date": "2024-08-27",
+      "department": "Health",
+      "amount": 486110.86,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1318",
+      "date": "2024-07-28",
+      "department": "Water Supply",
+      "amount": 1319649.78,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1319",
+      "date": "2024-05-24",
+      "department": "Transport",
+      "amount": 876015.49,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1320",
+      "date": "2024-02-07",
+      "department": "PWD",
+      "amount": 15709594.5,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1321",
+      "date": "2024-01-24",
+      "department": "Health",
+      "amount": 64836.28,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1322",
+      "date": "2024-04-27",
+      "department": "Water Supply",
+      "amount": 182112.04,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1323",
+      "date": "2024-05-06",
+      "department": "Water Supply",
+      "amount": 1357070.58,
+      "vendor": "Tata Projects",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1324",
+      "date": "2024-07-13",
+      "department": "Water Supply",
+      "amount": 1929925.19,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1325",
+      "date": "2024-08-21",
+      "department": "Health",
+      "amount": 1042020.08,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1326",
+      "date": "2024-05-02",
+      "department": "Education",
+      "amount": 157065.0,
+      "vendor": "Stationery Hub",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1327",
+      "date": "2024-03-25",
+      "department": "Water Supply",
+      "amount": 1833648.02,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1328",
+      "date": "2024-04-23",
+      "department": "Water Supply",
+      "amount": 1311119.36,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1329",
+      "date": "2024-03-04",
+      "department": "PWD",
+      "amount": 192420.78,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1330",
+      "date": "2024-06-21",
+      "department": "PWD",
+      "amount": 1111555.04,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1331",
+      "date": "2024-04-05",
+      "department": "Transport",
+      "amount": 292892.55,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1332",
+      "date": "2024-07-16",
+      "department": "Health",
+      "amount": 1029993.46,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1333",
+      "date": "2024-05-26",
+      "department": "Health",
+      "amount": 1248727.94,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1334",
+      "date": "2024-08-03",
+      "department": "Health",
+      "amount": 1375228.35,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1335",
+      "date": "2024-01-01",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1336",
+      "date": "2024-02-26",
+      "department": "Education",
+      "amount": 619648.37,
+      "vendor": "NCERT Delhi",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1337",
+      "date": "2024-10-23",
+      "department": "Transport",
+      "amount": 1639072.14,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1338",
+      "date": "2024-10-02",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1339",
+      "date": "2024-04-16",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1340",
+      "date": "2024-01-20",
+      "department": "Education",
+      "amount": 16228055.8,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1341",
+      "date": "2024-04-18",
+      "department": "PWD",
+      "amount": 1551422.87,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1342",
+      "date": "2024-03-31",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1343",
+      "date": "2024-08-15",
+      "department": "PWD",
+      "amount": 1019527.98,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1344",
+      "date": "2024-08-12",
+      "department": "Transport",
+      "amount": 1548678.58,
+      "vendor": "ElectricCharge India",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1345",
+      "date": "2024-08-20",
+      "department": "Health",
+      "amount": 348095.83,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1346",
+      "date": "2024-08-10",
+      "department": "Education",
+      "amount": 1011551.68,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1347",
+      "date": "2024-07-24",
+      "department": "Water Supply",
+      "amount": 134790.62,
+      "vendor": "Jal Board Works",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1348",
+      "date": "2024-07-23",
+      "department": "Water Supply",
+      "amount": 747241.68,
+      "vendor": "Tata Projects",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1349",
+      "date": "2024-05-14",
+      "department": "Transport",
+      "amount": 1581538.93,
+      "vendor": "ElectricCharge India",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1350",
+      "date": "2024-05-03",
+      "department": "Transport",
+      "amount": 1775996.82,
+      "vendor": "Tata Motors",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1351",
+      "date": "2024-05-15",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1352",
+      "date": "2024-04-09",
+      "department": "Water Supply",
+      "amount": 618309.37,
+      "vendor": "Tata Projects",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1353",
+      "date": "2024-06-29",
+      "department": "Health",
+      "amount": 1124929.59,
+      "vendor": "Standard Pharma",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1354",
+      "date": "2024-09-15",
+      "department": "Health",
+      "amount": 827224.63,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1355",
+      "date": "2024-02-17",
+      "department": "Education",
+      "amount": 227386.62,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1356",
+      "date": "2024-08-11",
+      "department": "Education",
+      "amount": 157272.69,
+      "vendor": "Stationery Hub",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1357",
+      "date": "2024-04-05",
+      "department": "Health",
+      "amount": 317785.75,
+      "vendor": "Standard Pharma",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1358",
+      "date": "2024-01-02",
+      "department": "Health",
+      "amount": 874956.21,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1359",
+      "date": "2024-06-08",
+      "department": "PWD",
+      "amount": 1338907.69,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1360",
+      "date": "2024-03-15",
+      "department": "Social Welfare",
+      "amount": 25000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1361",
+      "date": "2024-07-19",
+      "department": "PWD",
+      "amount": 701252.44,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1362",
+      "date": "2024-01-14",
+      "department": "PWD",
+      "amount": 383955.76,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1363",
+      "date": "2024-07-04",
+      "department": "Transport",
+      "amount": 1399401.33,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1364",
+      "date": "2024-10-08",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1365",
+      "date": "2024-09-01",
+      "department": "Transport",
+      "amount": 1207118.57,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1366",
+      "date": "2024-09-27",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1367",
+      "date": "2024-01-19",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1368",
+      "date": "2024-03-27",
+      "department": "PWD",
+      "amount": 1080876.17,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1369",
+      "date": "2024-06-21",
+      "department": "PWD",
+      "amount": 1522393.57,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1370",
+      "date": "2024-07-22",
+      "department": "PWD",
+      "amount": 158668.27,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1371",
+      "date": "2024-01-12",
+      "department": "Transport",
+      "amount": 697668.27,
+      "vendor": "ElectricCharge India",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1372",
+      "date": "2024-05-16",
+      "department": "Transport",
+      "amount": 604625.68,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1373",
+      "date": "2024-05-10",
+      "department": "Transport",
+      "amount": 6978.59,
+      "vendor": "DTC Delhi",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1374",
+      "date": "2024-04-25",
+      "department": "Education",
+      "amount": 1559046.89,
+      "vendor": "NCERT Delhi",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1375",
+      "date": "2024-03-29",
+      "department": "Water Supply",
+      "amount": 590404.12,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1376",
+      "date": "2024-08-26",
+      "department": "Education",
+      "amount": 1308849.4,
+      "vendor": "NCERT Delhi",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1377",
+      "date": "2024-05-26",
+      "department": "Transport",
+      "amount": 200017.81,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1378",
+      "date": "2024-05-05",
+      "department": "Water Supply",
+      "amount": 495639.35,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1379",
+      "date": "2024-05-17",
+      "department": "Transport",
+      "amount": 793785.26,
+      "vendor": "DTC Delhi",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1380",
+      "date": "2024-04-18",
+      "department": "Transport",
+      "amount": 12692535.2,
+      "vendor": "Tata Motors",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1381",
+      "date": "2024-06-21",
+      "department": "Water Supply",
+      "amount": 629103.13,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1382",
+      "date": "2024-08-23",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1383",
+      "date": "2024-03-15",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1384",
+      "date": "2024-08-01",
+      "department": "Education",
+      "amount": 779818.72,
+      "vendor": "NCERT Delhi",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1385",
+      "date": "2024-05-25",
+      "department": "Water Supply",
+      "amount": 1473583.52,
+      "vendor": "DJB Contractor",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1386",
+      "date": "2024-06-11",
+      "department": "Transport",
+      "amount": 1416592.62,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1387",
+      "date": "2024-07-13",
+      "department": "PWD",
+      "amount": 1577409.74,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1388",
+      "date": "2024-07-26",
+      "department": "Health",
+      "amount": 1571828.52,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1389",
+      "date": "2024-07-06",
+      "department": "PWD",
+      "amount": 652824.97,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1390",
+      "date": "2024-03-16",
+      "department": "Health",
+      "amount": 1243342.55,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1391",
+      "date": "2024-10-04",
+      "department": "PWD",
+      "amount": 1997919.8,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1392",
+      "date": "2024-05-26",
+      "department": "Health",
+      "amount": 1461954.41,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1393",
+      "date": "2024-10-07",
+      "department": "Health",
+      "amount": 1600368.71,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1394",
+      "date": "2024-09-04",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1395",
+      "date": "2024-08-02",
+      "department": "Transport",
+      "amount": 1073938.86,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1396",
+      "date": "2024-07-17",
+      "department": "Education",
+      "amount": 1373647.56,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1397",
+      "date": "2024-10-26",
+      "department": "Transport",
+      "amount": 112307.28,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1398",
+      "date": "2024-02-24",
+      "department": "Transport",
+      "amount": 1020070.27,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1399",
+      "date": "2024-04-07",
+      "department": "Education",
+      "amount": 780047.73,
+      "vendor": "EdTech Solutions",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1400",
+      "date": "2024-10-26",
+      "department": "Transport",
+      "amount": 1813175.7000000002,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1401",
+      "date": "2024-04-24",
+      "department": "Water Supply",
+      "amount": 1731824.43,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1402",
+      "date": "2024-01-24",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1403",
+      "date": "2024-10-11",
+      "department": "Water Supply",
+      "amount": 1694875.14,
+      "vendor": "DJB Contractor",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1404",
+      "date": "2024-10-21",
+      "department": "Transport",
+      "amount": 1115428.13,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1405",
+      "date": "2024-08-17",
+      "department": "Water Supply",
+      "amount": 1645294.55,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1406",
+      "date": "2024-01-12",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1407",
+      "date": "2024-06-13",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1408",
+      "date": "2024-06-26",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1409",
+      "date": "2024-03-14",
+      "department": "PWD",
+      "amount": 1549297.65,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1410",
+      "date": "2024-07-05",
+      "department": "Transport",
+      "amount": 1092170.78,
+      "vendor": "DTC Delhi",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1411",
+      "date": "2024-09-18",
+      "department": "Transport",
+      "amount": 1516326.62,
+      "vendor": "ElectricCharge India",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1412",
+      "date": "2024-09-27",
+      "department": "PWD",
+      "amount": 1463098.35,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1413",
+      "date": "2024-06-06",
+      "department": "Transport",
+      "amount": 1354968.12,
+      "vendor": "Tata Motors",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1414",
+      "date": "2024-02-25",
+      "department": "Education",
+      "amount": 982541.07,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1415",
+      "date": "2024-09-18",
+      "department": "Health",
+      "amount": 579654.37,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1416",
+      "date": "2024-08-24",
+      "department": "Health",
+      "amount": 987269.13,
+      "vendor": "HLL Lifecare",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1417",
+      "date": "2024-04-26",
+      "department": "Health",
+      "amount": 1597782.15,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1418",
+      "date": "2024-06-06",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1419",
+      "date": "2024-04-04",
+      "department": "Transport",
+      "amount": 827323.62,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1420",
+      "date": "2024-02-04",
+      "department": "Transport",
+      "amount": 2053939.5999999999,
+      "vendor": "Tata Motors",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1421",
+      "date": "2024-07-02",
+      "department": "Transport",
+      "amount": 1018880.77,
+      "vendor": "DTC Delhi",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1422",
+      "date": "2024-08-12",
+      "department": "Transport",
+      "amount": 6171.85,
+      "vendor": "ElectricCharge India",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1423",
+      "date": "2024-02-02",
+      "department": "Transport",
+      "amount": 1652546.4,
+      "vendor": "DTC Delhi",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1424",
+      "date": "2024-07-03",
+      "department": "PWD",
+      "amount": 646414.96,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1425",
+      "date": "2024-09-26",
+      "department": "Education",
+      "amount": 1270301.06,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1426",
+      "date": "2024-01-14",
+      "department": "Education",
+      "amount": 1609337.98,
+      "vendor": "NCERT Delhi",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1427",
+      "date": "2024-03-12",
+      "department": "Health",
+      "amount": 207291.62,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1428",
+      "date": "2024-01-17",
+      "department": "PWD",
+      "amount": 1739538.7,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1429",
+      "date": "2024-07-19",
+      "department": "Transport",
+      "amount": 1520455.95,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1430",
+      "date": "2024-04-30",
+      "department": "PWD",
+      "amount": 1348072.63,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1431",
+      "date": "2024-02-27",
+      "department": "Health",
+      "amount": 435409.86,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1432",
+      "date": "2024-04-28",
+      "department": "Health",
+      "amount": 1631927.72,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1433",
+      "date": "2024-07-03",
+      "department": "PWD",
+      "amount": 147537.53,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1434",
+      "date": "2024-09-24",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1435",
+      "date": "2024-04-27",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1436",
+      "date": "2024-09-27",
+      "department": "PWD",
+      "amount": 1733200.12,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1437",
+      "date": "2024-06-08",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1438",
+      "date": "2024-07-13",
+      "department": "Health",
+      "amount": 1987323.96,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1439",
+      "date": "2024-06-18",
+      "department": "Transport",
+      "amount": 706118.78,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1440",
+      "date": "2024-08-03",
+      "department": "PWD",
+      "amount": 14322550.2,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1441",
+      "date": "2024-01-01",
+      "department": "Water Supply",
+      "amount": 1576045.01,
+      "vendor": "DJB Contractor",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1442",
+      "date": "2024-03-10",
+      "department": "PWD",
+      "amount": 791778.18,
+      "vendor": "PWD Maintenance",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1443",
+      "date": "2024-07-09",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1444",
+      "date": "2024-02-28",
+      "department": "PWD",
+      "amount": 257905.49,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1445",
+      "date": "2024-04-16",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1446",
+      "date": "2024-05-06",
+      "department": "Education",
+      "amount": 110794.75,
+      "vendor": "NCERT Delhi",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1447",
+      "date": "2024-07-29",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1448",
+      "date": "2024-03-02",
+      "department": "Transport",
+      "amount": 1303919.32,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1449",
+      "date": "2024-01-14",
+      "department": "PWD",
+      "amount": 1924105.87,
+      "vendor": "BridgeBuild Corp",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1450",
+      "date": "2024-05-24",
+      "department": "Education",
+      "amount": 1397337.92,
+      "vendor": "EdTech Solutions",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1451",
+      "date": "2024-02-06",
+      "department": "Health",
+      "amount": 279335.39,
+      "vendor": "Standard Pharma",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1452",
+      "date": "2024-02-23",
+      "department": "Transport",
+      "amount": 1860341.96,
+      "vendor": "ElectricCharge India",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1453",
+      "date": "2024-07-26",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1454",
+      "date": "2024-07-09",
+      "department": "Health",
+      "amount": 41734.54,
+      "vendor": "HLL Lifecare",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1455",
+      "date": "2024-07-09",
+      "department": "Education",
+      "amount": 1887805.36,
+      "vendor": "NCERT Delhi",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1456",
+      "date": "2024-10-01",
+      "department": "Transport",
+      "amount": 1941303.18,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1457",
+      "date": "2024-05-30",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1458",
+      "date": "2024-07-25",
+      "department": "Health",
+      "amount": 916756.39,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1459",
+      "date": "2024-03-31",
+      "department": "Transport",
+      "amount": 1473190.47,
+      "vendor": "DTC Delhi",
+      "purpose": "Pink Ticket Reimbursement"
+    },
+    {
+      "id": "TX-1460",
+      "date": "2024-07-09",
+      "department": "Education",
+      "amount": 13987778.3,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1461",
+      "date": "2024-08-25",
+      "department": "Education",
+      "amount": 989729.26,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1462",
+      "date": "2024-07-11",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1463",
+      "date": "2024-10-18",
+      "department": "PWD",
+      "amount": 280627.86,
+      "vendor": "L&T",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1464",
+      "date": "2024-10-01",
+      "department": "Water Supply",
+      "amount": 1384211.47,
+      "vendor": "Jal Board Works",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1465",
+      "date": "2024-04-19",
+      "department": "PWD",
+      "amount": 97805.77,
+      "vendor": "L&T",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1466",
+      "date": "2024-07-20",
+      "department": "PWD",
+      "amount": 193395.26,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1467",
+      "date": "2024-02-23",
+      "department": "PWD",
+      "amount": 1753738.93,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1468",
+      "date": "2024-04-12",
+      "department": "Water Supply",
+      "amount": 1148813.22,
+      "vendor": "DJB Contractor",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1469",
+      "date": "2024-05-26",
+      "department": "Health",
+      "amount": 1867518.32,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1470",
+      "date": "2024-09-02",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1471",
+      "date": "2024-10-26",
+      "department": "Health",
+      "amount": 1470186.83,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1472",
+      "date": "2024-10-21",
+      "department": "Transport",
+      "amount": 889994.11,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1473",
+      "date": "2024-07-11",
+      "department": "PWD",
+      "amount": 1201207.72,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1474",
+      "date": "2024-02-13",
+      "department": "Education",
+      "amount": 1621993.11,
+      "vendor": "Stationery Hub",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1475",
+      "date": "2024-05-05",
+      "department": "Education",
+      "amount": 1068526.2,
+      "vendor": "Stationery Hub",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1476",
+      "date": "2024-09-09",
+      "department": "Water Supply",
+      "amount": 952866.66,
+      "vendor": "Jal Board Works",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1477",
+      "date": "2024-04-04",
+      "department": "Health",
+      "amount": 778848.35,
+      "vendor": "Standard Pharma",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1478",
+      "date": "2024-07-28",
+      "department": "Health",
+      "amount": 697756.43,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1479",
+      "date": "2024-06-12",
+      "department": "Water Supply",
+      "amount": 1986173.52,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1480",
+      "date": "2024-02-12",
+      "department": "Education",
+      "amount": 6832726.4,
+      "vendor": "Stationery Hub",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1481",
+      "date": "2024-08-14",
+      "department": "Water Supply",
+      "amount": 159530.34,
+      "vendor": "Jal Board Works",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1482",
+      "date": "2024-06-20",
+      "department": "Education",
+      "amount": 377398.96,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1483",
+      "date": "2024-03-24",
+      "department": "Water Supply",
+      "amount": 1823223.74,
+      "vendor": "DJB Contractor",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1484",
+      "date": "2024-02-14",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "Disability Assistance"
+    },
+    {
+      "id": "TX-1485",
+      "date": "2024-06-16",
+      "department": "Water Supply",
+      "amount": 511864.91,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1486",
+      "date": "2024-01-22",
+      "department": "Education",
+      "amount": 239809.02,
+      "vendor": "EdTech Solutions",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1487",
+      "date": "2024-02-03",
+      "department": "Education",
+      "amount": 1495754.86,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1488",
+      "date": "2024-07-08",
+      "department": "Health",
+      "amount": 923980.73,
+      "vendor": "HLL Lifecare",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1489",
+      "date": "2024-08-21",
+      "department": "Transport",
+      "amount": 1548630.09,
+      "vendor": "DTC Delhi",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1490",
+      "date": "2024-10-09",
+      "department": "Transport",
+      "amount": 243658.04,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1491",
+      "date": "2024-06-24",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1492",
+      "date": "2024-03-22",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1493",
+      "date": "2024-03-17",
+      "department": "Health",
+      "amount": 1570854.17,
+      "vendor": "Delhi Arogya Kosh",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1494",
+      "date": "2024-03-23",
+      "department": "Water Supply",
+      "amount": 531268.83,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1495",
+      "date": "2024-08-06",
+      "department": "Health",
+      "amount": 1498114.2,
+      "vendor": "Standard Pharma",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1496",
+      "date": "2024-03-22",
+      "department": "PWD",
+      "amount": 363181.3,
+      "vendor": "PWD Maintenance",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1497",
+      "date": "2024-07-30",
+      "department": "PWD",
+      "amount": 1374009.86,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1498",
+      "date": "2024-07-17",
+      "department": "PWD",
+      "amount": 216394.8,
+      "vendor": "L&T",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1499",
+      "date": "2024-01-01",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1500",
+      "date": "2024-06-10",
+      "department": "PWD",
+      "amount": 3657506.5,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1501",
+      "date": "2024-09-25",
+      "department": "Water Supply",
+      "amount": 1099667.16,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1502",
+      "date": "2024-08-10",
+      "department": "Water Supply",
+      "amount": 810638.23,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1503",
+      "date": "2024-06-16",
+      "department": "Water Supply",
+      "amount": 146061.09,
+      "vendor": "DJB Contractor",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1504",
+      "date": "2024-09-30",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1505",
+      "date": "2024-08-07",
+      "department": "Water Supply",
+      "amount": 1123269.79,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1506",
+      "date": "2024-08-06",
+      "department": "Social Welfare",
+      "amount": 1000,
+      "vendor": "Social Security Cell",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1507",
+      "date": "2024-03-31",
+      "department": "Transport",
+      "amount": 1725035.87,
+      "vendor": "ElectricCharge India",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1508",
+      "date": "2024-07-08",
+      "department": "Health",
+      "amount": 1197125.29,
+      "vendor": "Standard Pharma",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1509",
+      "date": "2024-10-23",
+      "department": "Water Supply",
+      "amount": 500827.28,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1510",
+      "date": "2024-04-14",
+      "department": "Transport",
+      "amount": 557746.6,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1511",
+      "date": "2024-02-26",
+      "department": "Water Supply",
+      "amount": 1375267.96,
+      "vendor": "ValveCo",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1512",
+      "date": "2024-05-11",
+      "department": "Water Supply",
+      "amount": 1461770.56,
+      "vendor": "Tata Projects",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1513",
+      "date": "2024-10-09",
+      "department": "Water Supply",
+      "amount": 532525.37,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1514",
+      "date": "2024-01-19",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1515",
+      "date": "2024-01-31",
+      "department": "Education",
+      "amount": 785643.14,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Smart Board Install"
+    },
+    {
+      "id": "TX-1516",
+      "date": "2024-09-26",
+      "department": "Education",
+      "amount": 1307637.67,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1517",
+      "date": "2024-06-01",
+      "department": "Education",
+      "amount": 1750555.45,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Classroom Repair"
+    },
+    {
+      "id": "TX-1518",
+      "date": "2024-05-30",
+      "department": "Health",
+      "amount": 836738.71,
+      "vendor": "Standard Pharma",
+      "purpose": "Medicine Procurement"
+    },
+    {
+      "id": "TX-1519",
+      "date": "2024-05-29",
+      "department": "Water Supply",
+      "amount": 200693.59,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1520",
+      "date": "2024-08-02",
+      "department": "Education",
+      "amount": 2385741.0,
+      "vendor": "NCERT Delhi",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1521",
+      "date": "2024-04-07",
+      "department": "Education",
+      "amount": 1520424.07,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Uniform Subsidy"
+    },
+    {
+      "id": "TX-1522",
+      "date": "2024-03-31",
+      "department": "Transport",
+      "amount": 1648742.03,
+      "vendor": "ElectricCharge India",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1523",
+      "date": "2024-06-24",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "DBT-Direct Benefit",
+      "purpose": "SC/ST Scholarship"
+    },
+    {
+      "id": "TX-1524",
+      "date": "2024-08-10",
+      "department": "Transport",
+      "amount": 1829007.16,
+      "vendor": "Tata Motors",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1525",
+      "date": "2024-10-16",
+      "department": "Water Supply",
+      "amount": 1404117.46,
+      "vendor": "ValveCo",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1526",
+      "date": "2024-09-08",
+      "department": "Health",
+      "amount": 1972455.92,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1527",
+      "date": "2024-05-16",
+      "department": "Water Supply",
+      "amount": 1578361.66,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1528",
+      "date": "2024-06-21",
+      "department": "PWD",
+      "amount": 540395.3,
+      "vendor": "L&T",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1529",
+      "date": "2024-05-28",
+      "department": "Water Supply",
+      "amount": 1662871.3,
+      "vendor": "Tata Projects",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1530",
+      "date": "2024-03-23",
+      "department": "Water Supply",
+      "amount": 1584126.19,
+      "vendor": "DJB Contractor",
+      "purpose": "Pipeline Repair"
+    },
+    {
+      "id": "TX-1531",
+      "date": "2024-08-22",
+      "department": "Transport",
+      "amount": 384732.11,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1532",
+      "date": "2024-02-26",
+      "department": "PWD",
+      "amount": 1719617.67,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Flyover Repair"
+    },
+    {
+      "id": "TX-1533",
+      "date": "2024-07-28",
+      "department": "Social Welfare",
+      "amount": 3000,
+      "vendor": "PFMS Transfer",
+      "purpose": "Old Age Pension"
+    },
+    {
+      "id": "TX-1534",
+      "date": "2024-02-13",
+      "department": "Health",
+      "amount": 677107.23,
+      "vendor": "HLL Lifecare",
+      "purpose": "Mohalla Clinic Maintenance"
+    },
+    {
+      "id": "TX-1535",
+      "date": "2024-09-22",
+      "department": "Education",
+      "amount": 860902.37,
+      "vendor": "Vidyalaya Kalyan Samiti",
+      "purpose": "Free Textbook Distribution"
+    },
+    {
+      "id": "TX-1536",
+      "date": "2024-10-10",
+      "department": "PWD",
+      "amount": 118430.67,
+      "vendor": "L&T",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1537",
+      "date": "2024-01-13",
+      "department": "Water Supply",
+      "amount": 1093523.96,
+      "vendor": "ValveCo",
+      "purpose": "Chlorination Chemicals"
+    },
+    {
+      "id": "TX-1538",
+      "date": "2024-10-27",
+      "department": "Transport",
+      "amount": 1900456.76,
+      "vendor": "DTC Delhi",
+      "purpose": "Charging Station Electricity"
+    },
+    {
+      "id": "TX-1539",
+      "date": "2024-02-24",
+      "department": "PWD",
+      "amount": 1672682.14,
+      "vendor": "PWD Maintenance",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1540",
+      "date": "2024-03-16",
+      "department": "Health",
+      "amount": 5207393.7,
+      "vendor": "Apollo Pharmacy",
+      "purpose": "Ambulance Fuel"
+    },
+    {
+      "id": "TX-1541",
+      "date": "2024-01-25",
+      "department": "Transport",
+      "amount": 951934.62,
+      "vendor": "DIMTS Ltd",
+      "purpose": "Route Audit"
+    },
+    {
+      "id": "TX-1542",
+      "date": "2024-06-13",
+      "department": "Health",
+      "amount": 1759512.09,
+      "vendor": "Standard Pharma",
+      "purpose": "Free Lab Test Subsidy"
+    },
+    {
+      "id": "TX-1543",
+      "date": "2024-07-11",
+      "department": "PWD",
+      "amount": 1891511.95,
+      "vendor": "RoadMasters Ltd",
+      "purpose": "Street Light Maintenance"
+    },
+    {
+      "id": "TX-1544",
+      "date": "2024-10-11",
+      "department": "PWD",
+      "amount": 10574.26,
+      "vendor": "PWD Maintenance",
+      "purpose": "Pavement Works"
+    },
+    {
+      "id": "TX-1545",
+      "date": "2024-03-25",
+      "department": "Water Supply",
+      "amount": 1232826.82,
+      "vendor": "Tata Projects",
+      "purpose": "Water Tanker Supply"
+    },
+    {
+      "id": "TX-1546",
+      "date": "2024-09-10",
+      "department": "Transport",
+      "amount": 558466.78,
+      "vendor": "Tata Motors",
+      "purpose": "Bus Maintenance"
+    },
+    {
+      "id": "TX-1547",
+      "date": "2024-10-27",
+      "department": "PWD",
+      "amount": 1821172.18,
+      "vendor": "L&T",
+      "purpose": "Road Resurfacing"
+    },
+    {
+      "id": "TX-1548",
+      "date": "2024-09-27",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "Social Security Cell",
+      "purpose": "Widow Pension"
+    },
+    {
+      "id": "TX-1549",
+      "date": "2024-01-07",
+      "department": "Water Supply",
+      "amount": 43460.4,
+      "vendor": "ValveCo",
+      "purpose": "STP Maintenance"
+    },
+    {
+      "id": "TX-1550",
+      "date": "2024-02-09",
+      "department": "Social Welfare",
+      "amount": 2500,
+      "vendor": "PFMS Transfer",
+      "purpose": "SC/ST Scholarship"
     }
-  ]
+  ],
+  "departments": []
 }
