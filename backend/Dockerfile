@@ -1,8 +1,11 @@
 # 1. Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
-# 2. Install system dependencies (Tesseract + OpenCV requirements)
+# 2. Install system dependencies
+# ADDED: build-essential (for GCC compilers) and python3-dev (for headers)
 RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
     tesseract-ocr \
     libtesseract-dev \
     libgl1 \
@@ -14,6 +17,11 @@ WORKDIR /app
 
 # 4. Copy requirements and install Python dependencies
 COPY requirements.txt .
+
+# ADDED: Upgrade pip first. 
+# This helps it find pre-compiled "wheels" so it doesn't try (and fail) to compile numpy from scratch.
+RUN pip install --upgrade pip setuptools wheel
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Download spaCy language model (required for NER)
