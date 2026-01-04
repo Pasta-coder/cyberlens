@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle, Upload, Database, Info } from "lucide-react";
 
-// Helper to get the API URL
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+// Helper to get the API URL (uses env var in prod, localhost in dev)
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
 
 export default function FraudPredictPage() {
   const [singleMode, setSingleMode] = useState(true);
@@ -13,12 +13,12 @@ export default function FraudPredictPage() {
   const [result, setResult] = useState<any>(null);
   const [modelInfo, setModelInfo] = useState<any>(null);
 
-  // Single contract form state
+  // ✅ FIXED: State uses 'contract_name' consistently
   const [formData, setFormData] = useState({
     contract_name: "",
     amount: "",
     date: "", // dd-mm-yyyy
-    bidders: "3", // Default to 3 to avoid accidental single-bidder flags
+    bidders: "3", // Default to 3
     department: "",
   });
 
@@ -55,17 +55,17 @@ export default function FraudPredictPage() {
 
       // 2. Prepare Payload matching Backend Schema (ContractInput)
       const payload = {
-        name: formData.contract_name || "Unknown Contract",
+        name: formData.contract_name || "Unknown Contract", // Map contract_name -> name for backend
         department: formData.department || "General",
         estimated_price: parseFloat(formData.amount) || 0,
-        final_price: parseFloat(formData.amount) || 0, // Assuming fixed price for now
+        final_price: parseFloat(formData.amount) || 0,
         bidders: parseInt(formData.bidders) || 1,
         award_month: award_month,
         is_sunday: is_sunday,
         is_december: is_december
       };
 
-      const res = await fetch(`${API_URL}/api/fraud-predict`, {
+      const res = await fetch(`${API_URL}/fraud-predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -97,7 +97,7 @@ export default function FraudPredictPage() {
       const fileContent = await batchFile.text();
       const contracts = JSON.parse(fileContent);
 
-      const res = await fetch(`${API_URL}/api/fraud-predict/batch`, {
+      const res = await fetch(`${API_URL}/fraud-predict/batch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ contracts }),
@@ -113,7 +113,7 @@ export default function FraudPredictPage() {
 
   const fetchModelInfo = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/fraud-predict/model-info`);
+      const res = await fetch(`${API_URL}/fraud-predict/model-info`);
       const data = await res.json();
       setModelInfo(data);
     } catch (err) {
@@ -177,16 +177,7 @@ export default function FraudPredictPage() {
               Enter Contract Details
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="md:col-span-2">
-                <InputField
-                  label="Contract Name / Title *"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="e.g., Construction of Highway Bypass Section A-12"
-                />
-              </div>
-
+              {/* ✅ FIXED: Input matches state 'contract_name' */}
               <InputField
                 label="Contract Title"
                 name="contract_name"
@@ -309,7 +300,6 @@ export default function FraudPredictPage() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 mb-1">Contract Value</p>
-                {/* Safe access to feature breakdown */}
                 <p className="text-2xl font-semibold">
                   {result.feature_breakdown?.price_efficiency
                     ? "Efficiency: " + result.feature_breakdown.price_efficiency
