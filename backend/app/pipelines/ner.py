@@ -1,15 +1,22 @@
 import spacy
 from collections import defaultdict
 
-# ✅ Load spaCy model once
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    # Graceful fallback if model missing
-    raise RuntimeError(
-        "⚠️ spaCy model 'en_core_web_sm' not found. "
-        "Run: python -m spacy download en_core_web_sm"
-    )
+# ⚠️ LAZY LOADING GLOBAL VARIABLE
+_nlp_model = None
+
+def get_nlp_model():
+    """Load spaCy model only when needed to save startup RAM."""
+    global _nlp_model
+    if _nlp_model is None:
+        try:
+            print("⏳ Loading spaCy model...")
+            _nlp_model = spacy.load("en_core_web_sm")
+        except OSError:
+            raise RuntimeError(
+                "⚠️ spaCy model 'en_core_web_sm' not found. "
+                "Run: python -m spacy download en_core_web_sm"
+            )
+    return _nlp_model
 
 
 def normalize_entity(text: str) -> str:
@@ -23,6 +30,9 @@ def extract_named_entities(text: str):
     confidence & context awareness.
     Returns list of dicts: {type, value, confidence, context}
     """
+    # Load model here, not at top level
+    nlp = get_nlp_model()
+    
     doc = nlp(text)
     raw_entities = []
 
@@ -56,11 +66,6 @@ def extract_named_entities(text: str):
     return list(deduped.values())
 
 
-# 🧪 Optional: Quick self-test
 if __name__ == "__main__":
-    sample = """
-    The victim received an email from ICICI Bank Support asking to verify KYC.
-    It claimed to be from Paytm Services, located in Mumbai, India.
-    Contact person: Rahul Verma.
-    """
+    sample = "Test"
     print(extract_named_entities(sample))
