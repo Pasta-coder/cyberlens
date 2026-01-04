@@ -48,11 +48,13 @@ export default function UploadPage() {
         🧠 CyberLens AI Evidence Analyzer
       </h1>
       <p className="text-gray-600 mb-8">
-        Upload any digital evidence (image, document, or screenshot).  
-        CyberLens automatically extracts text, detects scams, classifies risks,  
+        Upload any digital evidence (image, document, or screenshot).
+        CyberLens automatically extracts text, detects scams, classifies risks,
         and performs OSINT + QR/URL intelligence analysis.
       </p>
-
+      <p className="text-red-600 mb-8">
+        FREE CLOUD MEMORY FULL , MODEL WORKS ON LOCALHOST
+      </p>
       <EvidenceUploader onUpload={handleUpload} disabled={isLoading} />
 
       {/* Loading Spinner */}
