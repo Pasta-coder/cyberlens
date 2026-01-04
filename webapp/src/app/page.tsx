@@ -54,41 +54,35 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-100 to-blue-200">
-              CyberLens
+              SatyaSetu.AI
             </h1>
 
             <p className="text-xl md:text-2xl font-semibold mb-4 text-cyan-100">
-              AI-Powered Digital Forensics & Governance Intelligence
+              Bridging the gap between data and truth
             </p>
 
             <p className="text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10">
-              Empowering auditors, investigators, and policymakers with statistical forensics,
-              AI-assisted analysis, and explainable intelligence for evidence-based governance.
+              SatyaSetu.AI is a intelligence platform that uses AI and statistical forensics to turn government data and digital evidence into clear, explainable audit signals for fraud detection and public accountability.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="#governance-modules"
-                className="group bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
-              >
-                Explore Dashboards
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
 
               <Link
                 href="/fraud-predict"
                 className="group bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
               >
                 <AlertTriangle className="w-5 h-5" />
-                Try Fraud Detector
+                Contract Fraud Detector
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 href="/upload"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold border border-white/20 hover:border-white/40 transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
               >
-                Upload Evidence
+                <AlertTriangle className="w-5 h-5" />
+                Public Fraud Detector
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>
@@ -214,13 +208,13 @@ export default function HomePage() {
                 <AlertTriangle className="w-4 h-4" />
                 AI-Powered Detection
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
                 XGBoost Fraud Prediction Engine
               </h2>
-              
+
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Detect procurement fraud before it happens with our Romania-trained machine learning model 
+                Detect procurement fraud before it happens with our Romania-trained machine learning model
                 achieving <span className="font-bold text-red-600">R² = 0.74</span> accuracy on corruption risk prediction.
               </p>
 
@@ -232,7 +226,7 @@ export default function HomePage() {
                     <p className="text-slate-600 text-sm">Detects round number manipulation, single bidder patterns, cost overruns</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                   <div>
@@ -240,7 +234,7 @@ export default function HomePage() {
                     <p className="text-slate-600 text-sm">Feature breakdown and fraud signal severity levels for transparency</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                   <div>
@@ -259,7 +253,7 @@ export default function HomePage() {
                   Launch Fraud Detector
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                
+
                 <a
                   href="#governance-modules"
                   className="px-8 py-4 rounded-xl font-semibold border-2 border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-all duration-300"

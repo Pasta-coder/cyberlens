@@ -177,6 +177,16 @@ export default function FraudPredictPage() {
               Enter Contract Details
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
+                <InputField
+                  label="Contract Name / Title *"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="e.g., Construction of Highway Bypass Section A-12"
+                />
+              </div>
+
               <InputField
                 label="Contract Title"
                 name="contract_name"
