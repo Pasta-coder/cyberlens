@@ -4,8 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle, Upload, Database, Info } from "lucide-react";
 
-// Helper to get the API URL (uses env var in prod, localhost in dev)
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
+// Helper to get the API URL - uses env var as default, localhost as fallback
+// Normalize URL: remove trailing slash and ensure it ends with /api
+let envApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
+envApiUrl = envApiUrl.replace(/\/+$/, ""); // Remove trailing slashes
+const API_URL = envApiUrl.endsWith("/api") ? envApiUrl : `${envApiUrl}/api`;
 
 export default function FraudPredictPage() {
   const [singleMode, setSingleMode] = useState(true);
@@ -143,8 +146,8 @@ export default function FraudPredictPage() {
           <button
             onClick={() => setSingleMode(true)}
             className={`px-6 py-2 rounded-lg font-medium transition ${singleMode
-                ? "bg-cyan-600 text-white shadow-md"
-                : "bg-white text-gray-700 border border-gray-300"
+              ? "bg-cyan-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-300"
               }`}
           >
             Single Contract
@@ -152,8 +155,8 @@ export default function FraudPredictPage() {
           <button
             onClick={() => setSingleMode(false)}
             className={`px-6 py-2 rounded-lg font-medium transition ${!singleMode
-                ? "bg-cyan-600 text-white shadow-md"
-                : "bg-white text-gray-700 border border-gray-300"
+              ? "bg-cyan-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-300"
               }`}
           >
             Batch Upload
@@ -368,16 +371,16 @@ export default function FraudPredictPage() {
                 <div
                   key={idx}
                   className={`border rounded-lg p-4 ${["HIGH", "CRITICAL"].includes(item.risk_level)
-                      ? "bg-red-50 border-red-200"
-                      : "bg-green-50 border-green-200"
+                    ? "bg-red-50 border-red-200"
+                    : "bg-green-50 border-green-200"
                     }`}
                 >
                   <div className="flex justify-between items-center">
                     <span className="font-medium truncate max-w-xs">{item.contract_name}</span>
                     <span
                       className={`px-3 py-1 rounded-full text-sm font-semibold ${["HIGH", "CRITICAL"].includes(item.risk_level)
-                          ? "bg-red-200 text-red-800"
-                          : "bg-green-200 text-green-800"
+                        ? "bg-red-200 text-red-800"
+                        : "bg-green-200 text-green-800"
                         }`}
                     >
                       {item.risk_level}
