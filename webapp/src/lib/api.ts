@@ -28,12 +28,27 @@ api.interceptors.response.use(
     const status = err.response?.status;
     const url = err.config?.url;
 
-    // If entity not found, just warn instead of crashing
+    // Silent fail for dashboard/procurement endpoints - these 404s are expected when backend is offline
+    const isDashboardEndpoint = url?.includes('/cases/') || 
+                               url?.includes('/dashboard/') || 
+                               url?.includes('/regions') || 
+                               url?.includes('/benford') || 
+                               url?.includes('/clusters') || 
+                               url?.includes('/time-series') || 
+                               url?.includes('/funnel');
+
+    if (status === 404 && isDashboardEndpoint) {
+      // Silent fail - this is expected when backend is offline
+      return Promise.reject({ message: "Endpoint not available", status, url, silent: true });
+    }
+
+    // For other 404s, warn
     if (status === 404) {
       console.warn(`⚠️ Entity not found at ${url}`);
       return Promise.reject({ message: "Entity not found", status, url });
     }
 
+    // For other errors, log details
     console.error("🚨 API Error Details:", errorData);
     throw new Error(
       JSON.stringify({
@@ -316,20 +331,37 @@ export interface DashboardData {
 
 // Load dashboard data - falls back to mock if API unavailable
 export async function getDashboardData(): Promise<DashboardData> {
+  // Always use mock data for now - backend endpoints are not implemented
+  console.log("📊 Loading mock dashboard data (backend not available)");
+  const mockData = await import("../../mock/dashboard-sample.json");
+  return mockData as unknown as DashboardData;
+  
+  /* Commented out API calls until backend is ready
   try {
-    // Try to fetch from API endpoints
+    const fetchWithSilentFail = (endpoint: string) => 
+      api.get(endpoint).catch((err) => {
+        if (!err.silent) {
+          console.warn(`⚠️ Failed to fetch ${endpoint}:`, err.message);
+        }
+        return null;
+      });
+
     const [summary, regions, benford, network, leaderboard, timeSeries, funnel] = await Promise.all([
-      api.get("/cases/top-entities").catch(() => null),
-      api.get("/cases/regions").catch(() => null),
-      api.get("/cases/benford").catch(() => null),
-      api.get("/cases/clusters").catch(() => null),
-      api.get("/cases/top-entities").catch(() => null),
-      api.get("/cases/time-series").catch(() => null),
-      api.get("/cases/funnel").catch(() => null),
+      fetchWithSilentFail("/cases/top-entities"),
+      fetchWithSilentFail("/cases/regions"),
+      fetchWithSilentFail("/cases/benford"),
+      fetchWithSilentFail("/cases/clusters"),
+      fetchWithSilentFail("/cases/top-entities"),
+      fetchWithSilentFail("/cases/time-series"),
+      fetchWithSilentFail("/cases/funnel"),
     ]);
 
-    // If any API call succeeded, use that data
-    if (summary || regions || benford || network) {
+    // Check if we got actual data (not just null responses)
+    const hasLiveData = [summary, regions, benford, network, leaderboard, timeSeries, funnel]
+      .some(response => response?.data && Object.keys(response.data).length > 0);
+
+    if (hasLiveData) {
+      console.log("✅ Using live API data for procurement dashboard");
       return {
         summary: summary?.data || {},
         regions: regions?.data || [],
@@ -344,11 +376,11 @@ export async function getDashboardData(): Promise<DashboardData> {
     // Fall back to mock data
     throw new Error("No API data available");
   } catch (error) {
-    console.warn("⚠️ API unavailable, loading mock dashboard data");
-    // Import mock data dynamically
+    console.log("📊 Loading mock dashboard data (API unavailable)");
     const mockData = await import("../../mock/dashboard-sample.json");
     return mockData as unknown as DashboardData;
   }
+  */
 }
 
 // Export Axios instance (for debugging)
