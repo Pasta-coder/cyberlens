@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { batchAnalyze, generateUnifiedReport, openPdfBlob } from "@/lib/api";
-import { useCyberLensStore } from "@/lib/store";
+import { useSatyaSetuAIStore } from "@/lib/store";
 
 export default function BatchPage() {
-  const { setNotification } = useCyberLensStore();
+  const { setNotification } = useSatyaSetuAIStore();
   const [files, setFiles] = useState<FileList | null>(null);
   const [batchId, setBatchId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
