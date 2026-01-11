@@ -29,13 +29,13 @@ api.interceptors.response.use(
     const url = err.config?.url;
 
     // Silent fail for dashboard/procurement endpoints - these 404s are expected when backend is offline
-    const isDashboardEndpoint = url?.includes('/cases/') || 
-                               url?.includes('/dashboard/') || 
-                               url?.includes('/regions') || 
-                               url?.includes('/benford') || 
-                               url?.includes('/clusters') || 
-                               url?.includes('/time-series') || 
-                               url?.includes('/funnel');
+    const isDashboardEndpoint = url?.includes('/cases/') ||
+      url?.includes('/dashboard/') ||
+      url?.includes('/regions') ||
+      url?.includes('/benford') ||
+      url?.includes('/clusters') ||
+      url?.includes('/time-series') ||
+      url?.includes('/funnel');
 
     if (status === 404 && isDashboardEndpoint) {
       // Silent fail - this is expected when backend is offline
@@ -335,7 +335,7 @@ export async function getDashboardData(): Promise<DashboardData> {
   console.log("📊 Loading mock dashboard data (backend not available)");
   const mockData = await import("../../mock/dashboard-sample.json");
   return mockData as unknown as DashboardData;
-  
+
   /* Commented out API calls until backend is ready
   try {
     const fetchWithSilentFail = (endpoint: string) => 
