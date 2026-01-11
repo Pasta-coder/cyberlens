@@ -27,8 +27,8 @@ def extract_named_entities(text):
         
         entities = [
             {
-                "text": ent.text, 
-                "label": ent.label_, 
+                "value": ent.text,      # Changed from "text" to match risk_assessor.py
+                "type": ent.label_,     # Changed from "label" to match risk_assessor.py
                 "start": ent.start_char, 
                 "end": ent.end_char
             }

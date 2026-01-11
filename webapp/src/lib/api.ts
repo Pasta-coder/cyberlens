@@ -14,7 +14,7 @@ console.log("🔗 API Base URL set to:", BASE_URL); // Debug log
 // Axios instance
 const api = axios.create({
   baseURL: BASE_URL,
-  timeout: 30000,
+  timeout: 120000, // 2 minutes - OCR + NER + Scam analysis can take time
   headers: {
     "Content-Type": "application/json",
   },
