@@ -21,12 +21,11 @@ export default function Navbar() {
   ];
 
   const mainNavItems = [
-    { name: "public fraud", href: "/dashboard" },
-    { name: "Contract fraud", href: "/contract" },
+    { name: "Public Fraud", href: "/dashboard" },
     { name: "Fraud Predict", href: "/fraud-predict" },
-    { name: "goverment spending", href: "/fiscal" },
-    { name: "procurement", href: "/procurement" },
-    { name: "welfare", href: "/welfare" },
+    { name: "Government Spending", href: "/fiscal" },
+    { name: "Procurement", href: "/procurement" },
+    { name: "Welfare", href: "/welfare" },
   ];
 
   return (

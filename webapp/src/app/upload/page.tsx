@@ -52,9 +52,6 @@ export default function UploadPage() {
         SatyaSetu.AI automatically extracts text, detects scams, classifies risks,
         and performs OSINT + QR/URL intelligence analysis.
       </p>
-      <p className="text-red-600 mb-8">
-        FREE CLOUD MEMORY FULL , MODEL WORKS ON LOCALHOST
-      </p>
       <EvidenceUploader onUpload={handleUpload} disabled={isLoading} />
 
       {/* Loading Spinner */}

@@ -20,28 +20,39 @@ export default function FloatingAudioButton({
 
   useEffect(() => {
     // Initialize audio element
-    audioRef.current = new Audio(src);
+    audioRef.current = new Audio();
     
     const audio = audioRef.current;
 
     // Event handlers
-    const handleLoadedData = () => setIsLoaded(true);
+    const handleLoadedData = () => {
+      console.log(`✅ Audio loaded successfully: ${src}`);
+      setIsLoaded(true);
+    };
     const handleEnded = () => setIsPlaying(false);
-    const handleError = () => {
-      console.error(`Failed to load audio: ${src}`);
+    const handleError = (e: Event) => {
+      console.error(`❌ Failed to load audio: ${src}`, e);
       setIsLoaded(false);
+    };
+    const handleCanPlay = () => {
+      console.log(`🎵 Audio ready to play: ${src}`);
+      setIsLoaded(true);
     };
 
     audio.addEventListener("loadeddata", handleLoadedData);
+    audio.addEventListener("canplay", handleCanPlay);
     audio.addEventListener("ended", handleEnded);
     audio.addEventListener("error", handleError);
 
-    // Preload audio
+    // Set source and load
+    audio.src = src;
+    audio.preload = "auto";
     audio.load();
 
     // Cleanup
     return () => {
       audio.removeEventListener("loadeddata", handleLoadedData);
+      audio.removeEventListener("canplay", handleCanPlay);
       audio.removeEventListener("ended", handleEnded);
       audio.removeEventListener("error", handleError);
       audio.pause();
