@@ -12,18 +12,18 @@ from app.api.fraud_predict import router as fraud_predict_router     # Step 6: F
 
 # --- App Config ---
 app = FastAPI(
-    title="CyberLens API",
+    title="SatyaSetu.AI API",
     version="1.0",
     description="""
-    🚀 **CyberLens: AI-Powered Digital Forensics Pipeline**
+    🚀 **SatyaSetu.AI: AI-Powered Digital Forensics Pipeline**
 
     Core Features:
-    • Evidence Upload & Chain of Custody  
-    • OCR + NER Entity Extraction  
-    • Scam Classifier (AI-powered)  
-    • OSINT + Risk Intelligence + URL/QR Detection  
-    • Threat Intelligence Hub (Fraud Cluster Detection)  
-    • Batch Analysis + Unified Reports  
+    • Evidence Upload & Chain of Custody
+    • OCR + NER Entity Extraction
+    • Scam Classifier (AI-powered)
+    • OSINT + Risk Intelligence + URL/QR Detection
+    • Threat Intelligence Hub (Fraud Cluster Detection)
+    • Batch Analysis + Unified Reports
     """
 )
 
@@ -55,7 +55,7 @@ app.include_router(fraud_predict_router, prefix="/api")  # 🚨 /api/fraud-predi
 @app.get("/")
 def root():
     return {
-        "status": "✅ CyberLens backend active",
+        "status": "✅ SatyaSetu.AI backend active",
         "version": "1.0",
         "modules_loaded": [
             "upload_evidence",

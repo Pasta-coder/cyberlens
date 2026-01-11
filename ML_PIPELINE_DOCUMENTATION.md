@@ -1,8 +1,8 @@
-# 🤖 CyberLens ML Models & AI Pipeline Documentation
+# 🤖 SatyaSetu.AI ML Models & AI Pipeline Documentation
 
-> **Complete Technical Guide to Machine Learning and NLP Systems in CyberLens**
+> **Complete Technical Guide to Machine Learning and NLP Systems in SatyaSetu.AI**
 
-This document provides an in-depth technical overview of all machine learning models, NLP pipelines, and AI-powered analysis systems used in the CyberLens platform.
+This document provides an in-depth technical overview of all machine learning models, NLP pipelines, and AI-powered analysis systems used in the SatyaSetu.AI platform.
 
 ---
 
@@ -24,7 +24,7 @@ This document provides an in-depth technical overview of all machine learning mo
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
-│                           CYBERLENS AI PIPELINE                                  │
+│                           SatyaSetu.AI PIPELINE                                  │
 ├──────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                  │
 │   📤 INPUT                                                                       │

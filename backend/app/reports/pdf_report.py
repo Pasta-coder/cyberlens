@@ -42,7 +42,7 @@ def generate_pdf_report(
         alignment=TA_LEFT,
         leading=24
     )
-    story.append(Paragraph("CYBERLENS — FORENSIC INTELLIGENCE REPORT", title_style))
+    story.append(Paragraph("SATYASETU.AI — FORENSIC INTELLIGENCE REPORT", title_style))
     story.append(Spacer(1, 10))
 
     meta_style = ParagraphStyle(

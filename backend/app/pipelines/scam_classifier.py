@@ -1,5 +1,5 @@
 """
-CyberLens Hybrid Scam Classifier v2
+SatyaSeth.AI Hybrid Scam Classifier v2
 -----------------------------------
 Combines:
 ✅ ML (TF-IDF + Logistic Regression)
@@ -95,12 +95,12 @@ def detect_urgency_and_financial_terms(text: str):
 
 def classify_scam(text: str):
     """Perform hybrid AI + semantic + heuristic classification."""
-    
+
     # ⚠️ Initialize variables to None so we can safely delete them in 'finally'
     model = None
     vectorizer = None
     embedder = None
-    
+
     try:
         text_clean = clean_text(text)
         if not text_clean:
@@ -109,11 +109,11 @@ def classify_scam(text: str):
         # --- LOAD RESOURCES LOCALLY (PREVENTS GLOBAL MEMORY LEAKS) ---
         print("⏳ Loading Scam Models...")
         ensure_model_loaded()
-        
+
         # Load lightweight ML models
         model = joblib.load(MODEL_PATH)
         vectorizer = joblib.load(VECTORIZER_PATH)
-        
+
         # Load heavy Transformer model
         from sentence_transformers import SentenceTransformer, util
         embedder = SentenceTransformer(EMBEDDING_MODEL)
@@ -163,7 +163,7 @@ def classify_scam(text: str):
         # --- Step 4: Tone and Sentiment Analysis ---
         tone = detect_urgency_and_financial_terms(text_clean)
         sentiment = TextBlob(text_clean).sentiment.polarity
-        
+
         # --- Step 5: Confidence Fusion ---
         final_label = max(
             [pred_label, semantic_label, heuristic_label],
@@ -206,6 +206,6 @@ def classify_scam(text: str):
             del model
         if 'vectorizer' in locals() and vectorizer is not None:
             del vectorizer
-        
+
         gc.collect() # Force Python to release memory to OS
         print("✅ Scam Classifier Models Unloaded from Memory")

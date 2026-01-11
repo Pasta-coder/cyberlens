@@ -64,7 +64,7 @@ def generate_unified_report(batch_id: str):
 
     # Header
     pdf.set_font("Helvetica", "B", 20)
-    pdf.cell(0, 10, "CyberLens Unified Intelligence Report", ln=True, align="C")
+    pdf.cell(0, 10, "SatyaSetu.AI Unified Intelligence Report", ln=True, align="C")
     pdf.ln(8)
 
     # --- Executive Summary ---

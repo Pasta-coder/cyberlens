@@ -1,8 +1,8 @@
-# 🔍 CyberLens
+# 🔍 SatyaSetu.AI
 
 > **AI-Powered Digital Forensics & Fraud Detection Platform**
 
-CyberLens is an intelligent forensic analysis platform that combines OCR, NLP, OSINT, and Machine Learning to detect fraud patterns in digital evidence and public procurement contracts.
+SatyaSetu.AI is an intelligent forensic analysis platform that combines OCR, NLP, OSINT, and Machine Learning to detect fraud patterns in digital evidence and public procurement contracts.
 
 ---
 
@@ -10,7 +10,7 @@ CyberLens is an intelligent forensic analysis platform that combines OCR, NLP, O
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                              CYBERLENS                                      │
+│                              SatyaSetu.AI                                      │
 ├──────────────────────────────┬──────────────────────────────────────────────┤
 │        FRONTEND              │               BACKEND (FastAPI)              │
 │        (Next.js)             │                                              │
@@ -132,7 +132,7 @@ AI-powered corruption risk prediction for government contracts.
 ## 📂 Project Structure
 
 ```
-cyberlens/
+SatyaSeth.AI/
 ├── backend/                    # FastAPI Backend
 │   ├── app/
 │   │   ├── api/               # API Routes

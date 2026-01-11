@@ -1,5 +1,5 @@
 """
-CyberLens URL & QR Threat Scanner v3
+SatyaSetu.AI URL & QR Threat Scanner v3
 -----------------------------------
 ✅ Extract URLs from OCR text
 ✅ Decode QR codes from uploaded images
@@ -93,11 +93,11 @@ def extract_qr_codes(image_path: str) -> List[str]:
         # ⚠️ IMPORT HERE ONLY WHEN NEEDED
         import cv2
         from pyzbar.pyzbar import decode as qr_decode
-        
+
         img = cv2.imread(image_path)
-        if img is None: 
+        if img is None:
             return []
-            
+
         decoded = qr_decode(img)
         return [obj.data.decode("utf-8") for obj in decoded if obj.data]
     except ImportError:
