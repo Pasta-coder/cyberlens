@@ -29,13 +29,13 @@ app = FastAPI(
 
 # --- CORS for Frontend Integration ---
 origins = [
-    "http://localhost:3000",
-    "https://cyberlens-frontend.onrender.com", # REPLACE with your actual Frontend URL
+    "http://localhost:3000",                        # Local development
+    "https://satyasetu-ai.onrender.com",            # Your Render Frontend (Correct spelling)           # Your Render Frontend (Typo version, just in case)
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 👈 Explicit origins instead of ["*"]
+    allow_origins=origins,  # 👈 Explicit origins instead of ["*"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

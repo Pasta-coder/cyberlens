@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // 🌍 Base URL — Logic to ensure it always ends in '/api'
-let envUrl = "http://127.0.0.1:8000/api";
+let envUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
 
 // Remove trailing slash if present (e.g., "...onrender.com/")
 envUrl = envUrl.replace(/\/$/, "");
