@@ -1,0 +1,16 @@
+contract_title,estimated_price,final_price,bidder_count,award_date,audit_outcome
+"Road Repair NH-44",500000,490000,3,2024-01-15,0
+"Bridge Construction Yamuna",12000000,14500000,2,2024-02-20,1
+"School Building Renovation",800000,780000,5,2024-03-10,0
+"Water Pipeline Extension",3500000,5200000,1,2024-04-05,1
+"Street Light Installation",250000,240000,4,2024-05-12,0
+"Hospital Equipment Purchase",9500000,9400000,6,2024-06-18,0
+"Sewer Line Upgrade",4200000,6800000,1,2024-07-22,1
+"Park Development Phase-2",1500000,1480000,3,2024-08-30,0
+"Traffic Signal Modernization",600000,590000,4,2024-09-14,0
+"Garbage Collection Vehicles",7500000,11200000,1,2024-10-01,1
+"Community Hall Construction",2800000,2750000,5,2024-10-20,0
+"Flyover Maintenance Work",6000000,8900000,2,2024-11-05,1
+"Public Toilet Construction",350000,340000,3,2024-11-25,0
+"Smart City IT Infrastructure",15000000,14800000,7,2024-12-10,0
+"Metro Station Landscaping",1200000,1900000,1,2024-12-28,1

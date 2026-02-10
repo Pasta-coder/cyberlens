@@ -26,6 +26,7 @@ export default function Navbar() {
     { name: "Government Spending", href: "/fiscal" },
     { name: "Procurement", href: "/procurement" },
     { name: "Welfare", href: "/welfare" },
+    { name: "Admin", href: "/admin" },
   ];
 
   return (
@@ -50,8 +51,8 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive(item.href)
-                      ? "bg-cyan-500/20 text-cyan-300"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "bg-cyan-500/20 text-cyan-300"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                 >
                   {item.name}
@@ -67,8 +68,8 @@ export default function Navbar() {
             >
               <button
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1 ${["/fiscal", "/procurement", "/welfare"].some((path) => pathname.startsWith(path))
-                    ? "bg-cyan-500/20 text-cyan-300"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                  ? "bg-cyan-500/20 text-cyan-300"
+                  : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
               >
                 Governance Analytics

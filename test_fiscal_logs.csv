@@ -1,0 +1,21 @@
+transaction_id,department,vendor_name,amount,timestamp
+TX-101,PWD,CementCo India,45000.50,2024-03-01
+TX-102,PWD,SteelMax Ltd,128000.00,2024-03-01
+TX-103,Health,MediSupply Corp,67500.25,2024-03-02
+TX-104,Education,BookWorld Publishers,23400.00,2024-03-02
+TX-105,PWD,CementCo India,41000.00,2024-03-03
+TX-106,Transport,FuelLine Pvt Ltd,89000.75,2024-03-03
+TX-107,Health,PharmaNet Global,152000.00,2024-03-04
+TX-108,PWD,SteelMax Ltd,134500.50,2024-03-04
+TX-109,Education,TechLearn Solutions,56000.00,2024-03-05
+TX-110,Water,PipeWorks India,98700.00,2024-03-05
+TX-111,PWD,CementCo India,47200.00,2024-03-06
+TX-112,Transport,AutoFleet Services,215000.00,2024-03-06
+TX-113,Health,MediSupply Corp,31000.00,2024-03-07
+TX-114,PWD,RoadTech Builders,176000.00,2024-03-07
+TX-115,Sanitation,CleanCity Corp,62000.00,2024-03-08
+TX-116,PWD,CementCo India,43500.00,2024-03-08
+TX-117,Education,BookWorld Publishers,19800.00,2024-03-09
+TX-118,Health,PharmaNet Global,287000.00,2024-03-09
+TX-119,Water,PipeWorks India,105000.00,2024-03-10
+TX-120,PWD,SteelMax Ltd,142000.00,2024-03-10
