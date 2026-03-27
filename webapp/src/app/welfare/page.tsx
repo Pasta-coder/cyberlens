@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, TrendingDown, RefreshCw } from 'lucide-react';
+import { AlertTriangle, TrendingDown, RefreshCw, Database } from 'lucide-react';
 import WelfareSummaryCards from '@/components/welfare/WelfareSummaryCards';
 import GapChart from '@/components/welfare/GapChart';
 import GapNarrative from '@/components/welfare/GapNarrative';
@@ -9,6 +9,7 @@ import SchemeBreakdown from '@/components/welfare/SchemeBreakdown';
 import DistrictTable from '@/components/welfare/DistrictTable';
 import TimelineNarrative from '@/components/welfare/TimelineNarrative';
 import MethodologyModal from '@/components/welfare/MethodologyModal';
+import { getWelfareDashboard } from '@/lib/api';
 
 interface WelfareData {
   summary: {
@@ -59,6 +60,7 @@ export default function WelforePage() {
   const [data, setData] = useState<WelfareData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [dataSource, setDataSource] = useState<'live' | 'mock'>('live');
 
   useEffect(() => {
     loadWelfareData();
@@ -69,16 +71,24 @@ export default function WelforePage() {
     setError(null);
     
     try {
-      // Load mock data (backend endpoint not implemented yet)
-      const response = await fetch('/mock/welfare-gap.json');
-      if (!response.ok) {
-        throw new Error('Failed to load welfare data');
-      }
-      const welfareData = await response.json();
+      const welfareData = await getWelfareDashboard();
       setData(welfareData);
+      setDataSource('live');
+      console.log('✅ Welfare data loaded from PostgreSQL database');
     } catch (err) {
-      console.error('Error loading welfare data:', err);
-      setError('Unable to load welfare forensics data. Please try again.');
+      console.warn('⚠️ Backend unavailable, trying mock data...');
+      try {
+        const response = await fetch('/mock/welfare-gap.json');
+        if (response.ok) {
+          const mockData = await response.json();
+          setData(mockData);
+          setDataSource('mock');
+        } else {
+          throw new Error('Mock data also unavailable');
+        }
+      } catch {
+        setError('Unable to load welfare data. Please ensure the backend is running.');
+      }
     } finally {
       setLoading(false);
     }

@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import CopilotWrapper from "@/components/CopilotWrapper";
 
 export const metadata: Metadata = {
   title: "SatyaSetu.AI Forensics",
@@ -22,6 +23,9 @@ export default function RootLayout({
         {/* === Page Content === */}
         <main className="flex-1 w-full px-4 sm:px-8 py-8">{children}</main>
 
+        {/* === AI Copilot (floating on all pages) === */}
+        <CopilotWrapper />
+
         {/* === Footer === */}
         <footer className="bg-gray-900 text-gray-400 text-sm text-center py-4 mt-auto border-t border-gray-800">
           <p>
@@ -33,3 +37,4 @@ export default function RootLayout({
     </html>
   );
 }
+

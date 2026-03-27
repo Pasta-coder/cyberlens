@@ -1,0 +1,71 @@
+{
+  "file_id": "1f5f937c-e78e-40c0-b4e3-420db3b102c2.png",
+  "raw_text": "Googl Goi Imcoturt Oesnd Mynal esnr Woeictaet 5cv7iwim Mdriui Cinae Ale7ekeenlNAe Ajln",
+  "entities": [
+    {
+      "value": "Googl Goi Imcoturt Oesnd Mynal",
+      "type": "PERSON",
+      "start": 0,
+      "end": 30
+    }
+  ],
+  "scam_class": {
+    "category": "Fake Bank / Financial Fraud",
+    "confidence": 0.13,
+    "votes": {
+      "ml": "Fake Bank / Financial Fraud",
+      "semantic": "Tech Support Scam",
+      "heuristic": "Fake Bank / Financial Fraud"
+    },
+    "tone_signals": {
+      "urgency_score": 0.0,
+      "financial_score": 0.0,
+      "reward_score": 0.0,
+      "tone_factor": 0.0
+    },
+    "sentiment_polarity": 0.0,
+    "keywords": []
+  },
+  "osint_hits": [
+    {
+      "entity": "Googl Goi Imcoturt Oesnd Mynal",
+      "type": "person",
+      "timestamp": "2026-02-14T02:40:11.481022",
+      "aggregate_score": 0,
+      "risk": "Unknown"
+    }
+  ],
+  "risk": {
+    "score": 0.102,
+    "risk_level": "LOW 🟢",
+    "rationale": "No major fraud indicators found.",
+    "timestamp": "2026-02-14T02:40:11.765753",
+    "entity_details": [
+      {
+        "entity": "Googl Goi Imcoturt Oesnd Mynal",
+        "type": "PERSON",
+        "risk_score": 0,
+        "risk_level": "Low",
+        "tags": []
+      }
+    ],
+    "factors": {
+      "scam_confidence": 0.13,
+      "avg_entity_risk": 0.0,
+      "keyword_toxicity": 0.0,
+      "tone_score": 0.0,
+      "sentiment_neutrality": 1.0,
+      "osint_weight": 0.0
+    },
+    "scam_type": "Fake Bank / Financial Fraud"
+  },
+  "url_qr_findings": [],
+  "url_summary": {
+    "total_urls_scanned": 0,
+    "high_risk": 0,
+    "medium_risk": 0,
+    "low_risk": 0,
+    "top_high_risk_domains": []
+  },
+  "analyzed_at": "2026-02-14 02:40:12"
+}

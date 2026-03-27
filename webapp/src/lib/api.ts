@@ -20,6 +20,17 @@ const api = axios.create({
   },
 });
 
+// 🔐 Auth token interceptor
+api.interceptors.request.use((config) => {
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("satyasetu_token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+  }
+  return config;
+});
+
 // 🔁 Interceptor for unified error logging
 api.interceptors.response.use(
   (res) => res,
@@ -28,9 +39,14 @@ api.interceptors.response.use(
     const status = err.response?.status;
     const url = err.config?.url;
 
-    // Silent fail for dashboard/procurement endpoints - these 404s are expected when backend is offline
+    // If 401, clear token
+    if (status === 401 && typeof window !== "undefined") {
+      localStorage.removeItem("satyasetu_token");
+    }
+
+    // Silent fail for dashboard endpoints
     const isDashboardEndpoint = url?.includes('/cases/') ||
-      url?.includes('/dashboard/') ||
+      url?.includes('/dashboard') ||
       url?.includes('/regions') ||
       url?.includes('/benford') ||
       url?.includes('/clusters') ||
@@ -38,27 +54,50 @@ api.interceptors.response.use(
       url?.includes('/funnel');
 
     if (status === 404 && isDashboardEndpoint) {
-      // Silent fail - this is expected when backend is offline
       return Promise.reject({ message: "Endpoint not available", status, url, silent: true });
     }
 
-    // For other 404s, warn
     if (status === 404) {
       console.warn(`⚠️ Entity not found at ${url}`);
       return Promise.reject({ message: "Entity not found", status, url });
     }
 
-    // For other errors, log details
     console.error("🚨 API Error Details:", errorData);
     throw new Error(
-      JSON.stringify({
-        url,
-        status,
-        data: errorData,
-      })
+      JSON.stringify({ url, status, data: errorData })
     );
   }
 );
+
+
+// ===================================================================
+// 🔐 AUTHENTICATION
+// ===================================================================
+
+export async function login(username: string, password: string) {
+  const res = await api.post("/auth/login", { username, password });
+  if (res.data.access_token) {
+    localStorage.setItem("satyasetu_token", res.data.access_token);
+    localStorage.setItem("satyasetu_user", JSON.stringify(res.data.user));
+  }
+  return res.data;
+}
+
+export function logout() {
+  localStorage.removeItem("satyasetu_token");
+  localStorage.removeItem("satyasetu_user");
+}
+
+export function getStoredUser() {
+  if (typeof window === "undefined") return null;
+  const user = localStorage.getItem("satyasetu_user");
+  return user ? JSON.parse(user) : null;
+}
+
+export function isAuthenticated(): boolean {
+  if (typeof window === "undefined") return false;
+  return !!localStorage.getItem("satyasetu_token");
+}
 
 
 // ===================================================================
@@ -74,7 +113,6 @@ export async function uploadEvidence(file: File) {
     headers: { "Content-Type": "multipart/form-data" },
   });
 
-  // Expected Response: { file_id, sha256 }
   return res.data;
 }
 
@@ -84,12 +122,11 @@ export async function analyzeEvidence(file_id: string) {
   form.append("file_id", file_id);
 
   const res = await api.post("/analyze", form, {
-    headers: { "Content-Type": "multipart/form-data" }, // 👈 add this
+    headers: { "Content-Type": "multipart/form-data" },
   });
 
   return res.data;
 }
-
 
 // 3️⃣ Generate Case Report (PDF)
 export async function generateReport(file_id: string) {
@@ -98,10 +135,10 @@ export async function generateReport(file_id: string) {
 
   const res = await api.post("/report", form, {
     headers: { "Content-Type": "multipart/form-data" },
-    responseType: "blob", // important
+    responseType: "blob",
   });
 
-  return res.data; // blob data
+  return res.data;
 }
 
 export async function batchAnalyze(files: File[]) {
@@ -136,9 +173,9 @@ export async function getCaseClusters() {
 }
 
 
-// 🔟 Health Check (Basic connectivity)
+// 🔟 Health Check
 export async function healthCheck() {
-  const res = await axios.get("http://127.0.0.1:8000/");
+  const res = await axios.get(BASE_URL.replace("/api", "/"));
   return res.data;
 }
 
@@ -146,7 +183,6 @@ export async function healthCheck() {
 // ⚙️ UTILITY HELPERS
 // ===================================================================
 
-// 🧾 Open PDF Blob in new tab
 export function openPdfBlob(blobData: Blob, filename = "report.pdf") {
   const blob = new Blob([blobData], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
@@ -159,22 +195,21 @@ export function openPdfBlob(blobData: Blob, filename = "report.pdf") {
   URL.revokeObjectURL(url);
 }
 
-// 🧩 Simplified wrapper to call multiple endpoints together
 export async function analyzeAndReport(file: File) {
   const upload = await uploadEvidence(file);
   const analysis = await analyzeEvidence(upload.file_id);
   return { ...analysis, file_id: upload.file_id };
 }
 
+
 // ===================================================================
 // 🧠 CASE DATA ACCESS (Local Cache / API Bridge)
 // ===================================================================
 
-// Fetch a single analyzed case from cache
 export async function getCaseFromCache(file_id: string) {
   try {
     const res = await api.get(`/data/analysis_cache/${file_id}.json`, {
-      baseURL: "http://127.0.0.1:8000", // direct static path
+      baseURL: BASE_URL.replace("/api", ""),
     });
     return res.data;
   } catch (err) {
@@ -183,14 +218,11 @@ export async function getCaseFromCache(file_id: string) {
   }
 }
 
-// Fetch all analyzed cases from cache
 export async function getAllCases() {
   try {
     const res = await api.get("/cases/search?q=");
-    // backend may return { query, total_hits, cases: [...] } OR an array
     if (Array.isArray(res.data)) return res.data;
     if (res.data?.cases) return res.data.cases;
-    // fallback: if backend returned single object with case info, wrap it
     return res.data ? [res.data] : [];
   } catch (err) {
     console.warn("⚠️ Could not fetch case list:", err);
@@ -198,14 +230,11 @@ export async function getAllCases() {
   }
 }
 
-/** Fetch top entities; normalize to return simple array of {entity, count, avg_risk} */
 export async function getTopEntities() {
   try {
     const res = await api.get("/cases/top-entities");
-    // backend returns { total_entities, top: [...] } or an array -> normalize
     if (Array.isArray(res.data)) return res.data;
     if (Array.isArray(res.data?.top)) return res.data.top;
-    // older backend: might return { top_entities: [...] }
     if (Array.isArray(res.data?.top_entities)) return res.data.top_entities;
     return [];
   } catch (err) {
@@ -215,57 +244,109 @@ export async function getTopEntities() {
 }
 
 export async function getEntityProfile(entity: string) {
-  // make sure we call with the 'entity' param to match backend's primary param
   const res = await api.get(`/entities/profile?entity=${encodeURIComponent(entity)}`);
   return res.data;
 }
+
 
 // ===================================================================
 // 🚨 FRAUD PREDICTION ENDPOINTS
 // ===================================================================
 
 export interface ContractInput {
-  contract_type: string;
-  amount: number;
-  duration_days: number;
-  counterparty_name: string;
-  counterparty_country: string;
-  payment_method: string;
-  industry: string;
+  name: string;
+  department?: string;
+  estimated_price: number;
+  final_price: number;
+  bidders: number;
+  award_month?: number;
+  is_sunday?: boolean;
+  is_december?: boolean;
 }
 
 export interface FraudPredictionResult {
-  prediction: "fraud" | "legitimate";
-  fraud_probability: number;
-  confidence: number;
+  contract_name: string;
+  predicted_cri: number;
+  risk_level: string;
+  risk_color: string;
+  recommendation: string;
   fraud_signals: Array<{
-    signal_type: string;
+    signal: string;
     description: string;
     severity: string;
   }>;
-  timestamp: string;
+  feature_breakdown: Record<string, unknown>;
 }
 
-// Predict single contract
 export async function predictFraud(contract: ContractInput): Promise<FraudPredictionResult> {
   const res = await api.post("/fraud-predict", contract);
   return res.data;
 }
 
-// Predict batch contracts
 export async function predictFraudBatch(contracts: ContractInput[]) {
   const res = await api.post("/fraud-predict/batch", { contracts });
   return res.data;
 }
 
-// Get model information
 export async function getFraudModelInfo() {
   const res = await api.get("/fraud-predict/model-info");
   return res.data;
 }
 
+
 // ===================================================================
-// 📊 PROCUREMENT DASHBOARD ENDPOINTS
+// 📊 DASHBOARD ENDPOINTS (Real Database)
+// ===================================================================
+
+export async function getFiscalDashboard() {
+  const res = await api.get("/fiscal/dashboard");
+  return res.data;
+}
+
+export async function getProcurementDashboard() {
+  const res = await api.get("/procurement/dashboard");
+  return res.data;
+}
+
+export async function getWelfareDashboard() {
+  const res = await api.get("/welfare/dashboard");
+  return res.data;
+}
+
+export async function getAdminStats() {
+  const res = await api.get("/admin/stats");
+  return res.data;
+}
+
+
+// ===================================================================
+// 🛡️ ADMIN ENDPOINTS (Auth Required)
+// ===================================================================
+
+export async function adminUpload(
+  file: File,
+  dataType: string,
+) {
+  const form = new FormData();
+  form.append("file", file);
+  form.append("data_type", dataType);
+  form.append("uploader_name", "Admin");
+  form.append("uploader_department", "IT");
+
+  const res = await api.post("/admin/ingest", form, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return res.data;
+}
+
+export async function getUploadHistory() {
+  const res = await api.get("/admin/uploads");
+  return res.data;
+}
+
+
+// ===================================================================
+// 📊 LEGACY PROCUREMENT DASHBOARD (compatibility shim)
 // ===================================================================
 
 export interface DashboardData {
@@ -329,59 +410,55 @@ export interface DashboardData {
   };
 }
 
-// Load dashboard data - falls back to mock if API unavailable
+// Load dashboard data from real backend API
 export async function getDashboardData(): Promise<DashboardData> {
-  // Always use mock data for now - backend endpoints are not implemented
-  console.log("📊 Loading mock dashboard data (backend not available)");
-  const mockData = await import("../../mock/dashboard-sample.json");
-  return mockData as unknown as DashboardData;
-
-  /* Commented out API calls until backend is ready
   try {
-    const fetchWithSilentFail = (endpoint: string) => 
-      api.get(endpoint).catch((err) => {
-        if (!err.silent) {
-          console.warn(`⚠️ Failed to fetch ${endpoint}:`, err.message);
-        }
-        return null;
-      });
-
-    const [summary, regions, benford, network, leaderboard, timeSeries, funnel] = await Promise.all([
-      fetchWithSilentFail("/cases/top-entities"),
-      fetchWithSilentFail("/cases/regions"),
-      fetchWithSilentFail("/cases/benford"),
-      fetchWithSilentFail("/cases/clusters"),
-      fetchWithSilentFail("/cases/top-entities"),
-      fetchWithSilentFail("/cases/time-series"),
-      fetchWithSilentFail("/cases/funnel"),
-    ]);
-
-    // Check if we got actual data (not just null responses)
-    const hasLiveData = [summary, regions, benford, network, leaderboard, timeSeries, funnel]
-      .some(response => response?.data && Object.keys(response.data).length > 0);
-
-    if (hasLiveData) {
-      console.log("✅ Using live API data for procurement dashboard");
-      return {
-        summary: summary?.data || {},
-        regions: regions?.data || [],
-        benford: benford?.data || {},
-        network: network?.data || { buyers: [], suppliers: [], edges: [] },
-        leaderboard: leaderboard?.data || [],
-        time_series: timeSeries?.data || [],
-        funnel: funnel?.data || {},
-      };
-    }
-
-    // Fall back to mock data
-    throw new Error("No API data available");
+    console.log("📊 Fetching live procurement dashboard data from database...");
+    const data = await getProcurementDashboard();
+    console.log("✅ Live procurement data loaded from PostgreSQL");
+    return data as DashboardData;
   } catch (error) {
-    console.log("📊 Loading mock dashboard data (API unavailable)");
+    console.warn("⚠️ Backend unavailable, loading mock data as fallback");
     const mockData = await import("../../mock/dashboard-sample.json");
     return mockData as unknown as DashboardData;
   }
-  */
 }
+
+
+// ===================================================================
+// 🤖 AI COPILOT ENDPOINTS
+// ===================================================================
+
+export interface CopilotMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+export interface CopilotResponse {
+  response: string;
+  language: string;
+  model: string;
+  tokens_used: {
+    prompt: number;
+    completion: number;
+    total: number;
+  };
+}
+
+export async function copilotChat(
+  message: string,
+  history: CopilotMessage[] = [],
+  language: string = 'auto',
+): Promise<CopilotResponse> {
+  const res = await api.post('/copilot/chat', { message, history, language });
+  return res.data;
+}
+
+export async function getCopilotCapabilities() {
+  const res = await api.get('/copilot/capabilities');
+  return res.data;
+}
+
 
 // Export Axios instance (for debugging)
 export default api;

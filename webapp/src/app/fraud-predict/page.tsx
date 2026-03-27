@@ -139,9 +139,7 @@ export default function FraudPredictPage() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             AI-powered contract analysis to detect fraudulent patterns using machine learning models
           </p>
-           <p className="text-gray-600 max-w-2xl mx-auto">
-            BACKEND DEPLOYED ON AWS BUT CURRENTLY INACTVE .
-          </p>
+
         </motion.div>
 
         {/* Mode Toggle */}

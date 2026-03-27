@@ -35,6 +35,12 @@ matplotlib>=3.7.0
 requests>=2.31.0
 aiohttp>=3.8.0
 
+# --- Database ---
+psycopg2-binary>=2.9.0
+
+# --- AI Copilot ---
+groq>=1.0.0
+
 # --- Utilities ---
 tqdm>=4.65.0
 
