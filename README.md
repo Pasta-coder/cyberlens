@@ -308,14 +308,6 @@ model = XGBRegressor(
 - Chain of custody logging for evidence
 - No sensitive data stored in version control
 
----
-
-## 👥 Team
-
-**Escape Da Vinci** — Building AI for transparent governance
-
----
-
 ## 📄 License
 
 MIT License — See [LICENSE](LICENSE) for details.
