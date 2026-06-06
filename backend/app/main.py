@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -42,18 +43,15 @@ app = FastAPI(
 )
 
 # --- CORS for Frontend Integration ---
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://satyasetu-ai.onrender.com",
-    "https://satayasetu-ai.onrender.com",
-    "https://satyasetu-ai.vercel.app",
-    "*",  # Allow all for hackathon demo
-]
+# Set CORS_ORIGINS env var as comma-separated list, e.g.:
+#   CORS_ORIGINS=https://your-app.vercel.app,http://localhost:3000
+# Defaults to allowing all origins for easy initial setup.
+_cors_env = os.getenv("CORS_ORIGINS", "*")
+origins = [o.strip() for o in _cors_env.split(",")] if _cors_env != "*" else ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
