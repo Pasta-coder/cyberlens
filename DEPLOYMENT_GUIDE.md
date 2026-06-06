@@ -88,7 +88,7 @@
 
 ## 3. Pre-Deployment Code Changes
 
-Before deploying, we made 4 code changes to prepare the project for production:
+Before deploying, we made 5 code changes to prepare the project for production:
 
 ---
 
@@ -175,6 +175,24 @@ WHOIS_KEY=
 ```
 
 **Why**: Environment variables contain secrets (API keys, database passwords) that should **never** be committed to Git. The `.env.example` file serves as documentation — it tells anyone deploying the project exactly which variables they need to set, without exposing actual secret values.
+
+---
+
+### 3.5 Added CPU-Only PyTorch to Dockerfile (Post-Deployment Fix)
+
+**File**: `backend/Dockerfile`
+
+```diff
+ RUN pip install --upgrade pip setuptools wheel
+
++# Install CPU-only PyTorch FIRST to avoid downloading ~2GB of NVIDIA CUDA libraries
++# (EC2 t3.medium has no GPU — CUDA packages are unnecessary and waste disk space)
++RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
++
+ RUN pip install --no-cache-dir -r requirements.txt
+```
+
+**Why**: The `sentence-transformers` library depends on PyTorch, which by default installs the **CUDA (GPU) version** — this pulls in ~2 GB of NVIDIA GPU libraries (`nvidia-cusolver`, `nvidia-cublas`, `nvidia-nccl`, etc.). Our EC2 `t3.medium` instance has **no GPU**, so these libraries are completely useless and waste precious disk space. By installing CPU-only PyTorch *before* `requirements.txt`, pip sees that PyTorch is already satisfied and skips downloading the bloated CUDA version. This saved ~2 GB of disk space and was critical to making the build succeed.
 
 ---
 
@@ -275,7 +293,7 @@ git push origin main
 | **AMI** | Ubuntu 24.04 LTS | Ubuntu is the most widely supported Linux distro — almost every tutorial, package, and Docker image supports it. LTS = Long Term Support (5 years of security updates) |
 | **Instance Type** | `t3.medium` (2 vCPU, 4 GB RAM) | Our backend loads ML models (XGBoost, spaCy, sentence-transformers) that require ~2-3 GB RAM. `t3.small` (2 GB) would crash with Out-of-Memory errors |
 | **Key Pair** | `satyasetu-key` (.pem) | SSH keys are how you securely log into your server. The `.pem` file is your private key — never share it. It's like a password file for your server |
-| **Storage** | 20 GB gp3 | Docker images + Python packages + ML models need ~10 GB. 20 GB gives room for uploads and logs. `gp3` is the latest SSD type — cheaper and faster than `gp2` |
+| **Storage** | 20 GB gp3 (later expanded to 40 GB) | Docker images + Python packages + ML models need ~15-20 GB. Initially set to 20 GB but had to expand to 40 GB after running out of space during Docker build. `gp3` is the latest SSD type — cheaper and faster than `gp2` |
 
 **Why EC2 specifically?**: It's a virtual machine (VM) in AWS's data center. You get a full Linux server with root access, public IP, and 24/7 uptime — unlike your laptop which you turn off.
 
@@ -384,7 +402,58 @@ CORS_ORIGINS=https://cyberlens-pasta-coders-projects.vercel.app,http://localhost
 
 ---
 
-### Step 5.7 — Build Docker Image
+### Step 5.7 — Build Docker Image (First Attempt — Failed)
+
+The first build attempt failed with:
+```
+ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
+```
+
+This happened because `sentence-transformers` → `torch` was downloading ~2 GB of **NVIDIA CUDA GPU libraries** that our CPU-only EC2 instance doesn't need. The 20 GB disk filled up completely.
+
+**Two fixes were applied:**
+
+#### Fix A: Expand EBS Volume (20 GB → 40 GB)
+
+1. In **AWS Console → EC2 → Volumes** (left sidebar under Elastic Block Store)
+2. Selected the volume → **Actions → Modify Volume**
+3. Changed size from **20 → 40 GB** → Clicked **Modify**
+4. Waited ~30 seconds for AWS to resize the volume
+5. Then on EC2, told Linux to use the new space:
+
+```bash
+# Expand the partition to fill the new disk space
+sudo growpart /dev/xvda 1
+
+# Resize the filesystem to fill the expanded partition
+sudo resize2fs /dev/xvda1
+
+# Verify — should now show ~40 GB total
+df -h /
+```
+
+**Why these two commands?**: Expanding a volume in AWS only gives you more raw disk space — like buying a bigger hard drive. `growpart` expands the *partition* to use the new space, and `resize2fs` expands the *filesystem* so Linux can actually use it. Without both, Linux would still think it only has 20 GB.
+
+#### Fix B: CPU-Only PyTorch in Dockerfile
+
+Modified the Dockerfile to install CPU-only PyTorch before `requirements.txt` (see Section 3.5 above). This prevented pip from downloading the CUDA version and saved ~2 GB.
+
+#### Clean Up and Rebuild
+
+```bash
+# Remove all failed Docker build cache to reclaim space
+docker system prune -af
+
+# Pull the updated Dockerfile from GitHub
+git pull origin main
+
+# Build again — this time it succeeds
+docker build -t satyasetu-backend .
+```
+
+**Why `docker system prune -af`?**: Failed Docker builds leave behind intermediate layers and cached data. The `-a` flag removes *all* unused images (not just dangling ones), and `-f` skips the confirmation prompt. This reclaimed several GB of space from the failed build attempts.
+
+### Step 5.7b — Build Docker Image (Successful)
 
 ```bash
 docker build -t satyasetu-backend .
@@ -393,14 +462,17 @@ docker build -t satyasetu-backend .
 **What this does** (takes 5-10 minutes):
 1. Pulls the `python:3.10-slim` base image from Docker Hub
 2. Installs system packages: `tesseract-ocr`, `build-essential`, `libgl1`, etc.
-3. Copies `requirements.txt` and installs 60+ Python packages
-4. Downloads the spaCy English NLP model (`en_core_web_sm`)
-5. Copies all application code into the image
-6. Tags the final image as `satyasetu-backend`
+3. Installs CPU-only PyTorch (~300 MB instead of ~2 GB with CUDA)
+4. Copies `requirements.txt` and installs 60+ Python packages
+5. Downloads the spaCy English NLP model (`en_core_web_sm`)
+6. Copies all application code into the image
+7. Tags the final image as `satyasetu-backend`
 
 **Why `-t satyasetu-backend`?**: The `-t` flag assigns a name (tag) to the image. Without it, you'd have to reference the image by a random hash like `sha256:a1b2c3...` — not user-friendly.
 
 **Why `python:3.10-slim`?**: The `slim` variant is ~150 MB instead of ~900 MB for the full image. It removes unnecessary tools (compilers, man pages) but keeps everything Python needs. We install `build-essential` separately because some Python packages (like numpy) need a C compiler during installation.
+
+**Note on `debconf` warnings**: During the build you'll see warnings like `debconf: unable to initialize frontend: Dialog`. These are harmless — they occur because Docker builds run non-interactively (no terminal), so Linux's package manager can't show dialog boxes. It falls back to non-interactive mode and continues normally.
 
 ---
 
@@ -527,6 +599,69 @@ git push
 
 ---
 
+### Issue 3: Docker Build — "No space left on device" (NVIDIA CUDA Bloat)
+
+**Error:**
+```
+Downloading nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (200.9 MB)
+ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
+```
+
+**Cause**: The `sentence-transformers` package depends on `torch` (PyTorch). By default, `pip install torch` downloads the **CUDA version** which includes ~2 GB of NVIDIA GPU libraries (`nvidia-cusolver`, `nvidia-cublas`, `nvidia-nccl-cu12`, etc.). Our EC2 `t3.medium` has no GPU, making these libraries completely unnecessary. Combined with all other dependencies, this exceeded the 20 GB disk.
+
+**Fix** (two-part):
+1. **Expanded EBS volume** from 20 GB → 40 GB in AWS Console, then ran `growpart` + `resize2fs` on EC2
+2. **Modified Dockerfile** to install CPU-only PyTorch first (`--index-url https://download.pytorch.org/whl/cpu`) before `requirements.txt`
+
+**Lesson**: Always use CPU-only PyTorch on servers without GPUs. It's ~300 MB instead of ~2 GB and performs identically for inference tasks. Also, allocate at least 30-40 GB of disk for ML-heavy Docker builds.
+
+---
+
+### Issue 4: SSH Connection Dropped During Build
+
+**Error:**
+```
+Read from remote host 13.50.184.227: Connection reset by peer
+Connection to 13.50.184.227 closed.
+client_loop: send disconnect: Broken pipe
+```
+
+**Cause**: The Docker build consumed all available disk space, which caused the system to become unresponsive and dropped the SSH connection. When a Linux server runs out of disk, the OS can't write temporary files needed for SSH sessions.
+
+**Fix**: SSH'd back in after expanding the disk volume:
+```bash
+ssh -i ~/Downloads/satyasetu-key.pem ubuntu@13.50.184.227
+```
+
+**Important note**: When you get disconnected from SSH, **commands running in the foreground are killed**. If you were running a long Docker build, it stops. To prevent this in the future, use `screen` or `tmux`:
+```bash
+# Start a persistent session that survives SSH disconnects
+tmux new -s build
+docker build -t satyasetu-backend .
+# If disconnected, reconnect with: tmux attach -t build
+```
+
+**Lesson**: Always ensure adequate disk space before starting large builds. Consider using `tmux` for long-running operations on remote servers.
+
+---
+
+### Issue 5: `debconf` Warnings During Docker Build
+
+**Warning:**
+```
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Noninteractive
+```
+
+**Cause**: Docker builds run without a terminal (non-interactive environment). Linux's `debconf` system tries to use a dialog UI to ask configuration questions during package installation, but there's no terminal to display it.
+
+**Impact**: **None** — these are purely cosmetic warnings. `debconf` gracefully falls back to non-interactive mode and uses default answers for all configuration questions.
+
+**Fix**: No fix needed. You can suppress them by adding `ENV DEBIAN_FRONTEND=noninteractive` to the Dockerfile, but it's unnecessary since they don't affect the build.
+
+---
+
 ## 8. Cost Breakdown
 
 ### Monthly Costs
@@ -536,7 +671,7 @@ git push
 | Frontend hosting | Vercel (Hobby) | **$0** (free) |
 | Backend server | EC2 t3.medium | **~$30** |
 | Static IP | Elastic IP (attached) | **$0** |
-| Storage | 20 GB EBS gp3 | **~$1.60** |
+| Storage | 40 GB EBS gp3 | **~$3.20** |
 | Data transfer | First 100 GB/month | **$0** |
 | Database | Neon PostgreSQL (free tier) | **$0** |
 | SSL Certificate | Let's Encrypt | **$0** |
@@ -545,7 +680,7 @@ git push
 ### Budget
 
 - **AWS Credits Available**: $100
-- **Estimated Monthly Cost**: ~$32
+- **Estimated Monthly Cost**: ~$34
 - **Credits Last**: ~3 months
 
 ### Cost Optimization Tips
