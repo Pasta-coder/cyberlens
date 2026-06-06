@@ -22,6 +22,13 @@ __pycache__/
 *.log
 *.tmp
 
+# User-generated runtime data (mount as volume instead)
+app/data/uploads/
+app/data/analysis_cache/
+app/data/batches/
+app/data/metadata/
+app/reports/*.pdf
+
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
 
