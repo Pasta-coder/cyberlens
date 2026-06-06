@@ -22,6 +22,10 @@ COPY requirements.txt .
 # This helps it find pre-compiled "wheels" so it doesn't try (and fail) to compile numpy from scratch.
 RUN pip install --upgrade pip setuptools wheel
 
+# Install CPU-only PyTorch FIRST to avoid downloading ~2GB of NVIDIA CUDA libraries
+# (EC2 t3.medium has no GPU — CUDA packages are unnecessary and waste disk space)
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Download spaCy language model (required for NER)
